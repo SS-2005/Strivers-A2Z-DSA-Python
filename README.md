@@ -92,6 +92,62 @@ def IsPrime(n):
     else:
         return False
 ```
+6) Recurssion:
+
+A function which calls it self until a base condition is satiesfied is known as `Reccursion`. A base condition is a cruitial part of a recursive funtion else the function will run infinitely
+
+Problems on Recurssion
+
+* Print name N times using recursion:
+```
+def print_name(n,name):
+    if n == 1:
+        print(s)
+    else:
+        print("name")
+        print_name(n-1,name)
+```
+
+* 	Print 1 to N using recursion:
+```
+def print1ton(n):
+    if n == 1:
+        print(n)
+    else:
+        print1ton(n-1)
+        print(n)
+```
+
+* Print N to 1 using recursion:
+```
+def printnto1(n):
+    if n == 1:
+        print(n)
+    else:
+        print(n)
+        printnto1(n-1)
+```
+
+* Sum of first N numbers:
+```
+def sumR(n):
+    if n==0:
+        return 0
+    else:
+        s= n + sumR(n-1)
+    return s
+```
+
+* Factorial of N numbers:
+```
+def factR(n):
+    if n==0:
+        return 1
+    else:
+        s= n * factR(n-1)
+    return s
+```
+
 
 `Note : Will Update within 24 Hours`
 
