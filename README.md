@@ -17,7 +17,10 @@ I'm solving the Striver’s A2Z DSA Sheet using Python 🐍 — one day at a tim
 ---
 ## Problems :
 
-* Easy Problems:
+`Pre-requisite: Basic Python understanding`
+
+### I) Easy Problems:
+
 1) Check Palindrome
 
 [LeetCode](https://leetcode.com/problems/palindrome-number/description/)
@@ -148,6 +151,81 @@ def factR(n):
     return s
 ```
 
+7) Reverse an Array In-Place:
+```
+def reva(arr,n):
+    i=0
+    j=n-1
+    for _ in range(n//2):
+        arr[i],arr[j]=arr[j],arr[i]
+        i=i+1
+        j=j-1
+    return arr
+
+```
+
+8) Sum of Fibonacci Number Series:
+[leetcode](https://leetcode.com/problems/fibonacci-number/description/)
+```
+def f(n):
+    if n==0:
+        return 0
+    elif n==1:
+        return 1
+    else:
+        return f(n-1)+f(n-2)
+```
+
+
+
+
+### II) Medium Problems:
+
+* **Hashing:**
+Hashing is a technique used to map data (keys) to a fixed-size value (called hash code or hash value) using a hash function. It allows for fast data access, insertion, and deletion often in constant time O(1).
+  
+1) Check if a string is palindrome or not with Certain conditions:
+[Leetcoode](https://leetcode.com/problems/valid-palindrome/description/)
+```
+    def pal(s):
+        import re
+        s=re.sub(r'[^a-zA-Z0-9]', '', s).lower()
+        s=s.lower()
+        r=s[::-1]
+        return s==r
+```
+
+2) Find the highest/lowest frequency element:
+[Leetcode](https://leetcode.com/problems/frequency-of-the-most-frequent-element/description/)
+```
+class Solution(object):
+    def maxFrequency(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        nums.sort()
+        left = 0
+        total = 0
+        max_freq = 0
+        for right in range(len(nums)):
+                # total operations needed to bring all numbers in window [left...right] up to nums[right]
+            total += (nums[right] - nums[right - 1]) * (right - left)
+
+            # If total operations exceed k, shrink the window from the left
+            while total > k:
+                total -= nums[right] - nums[left]
+                left += 1
+
+            # Update max frequency
+            max_freq = max(max_freq, right - left + 1)
+
+        return max_freq
+```
+
+
+### III) Hard Probles:
 
 `Note : Will Update within 24 Hours`
 
