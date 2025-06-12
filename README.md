@@ -176,7 +176,249 @@ def f(n):
         return f(n-1)+f(n-2)
 ```
 
+#### 9)Sorting Techniques:
+<br>
 
+#### **Selection Sort** :
+  
+Selection Sort is a simple comparison-based sorting algorithm. It divides the list into two parts:
+
+  * The sorted part at the beginning
+
+  * The unsorted part at the end
+
+It repeatedly selects the smallest (or largest) element from the unsorted part and swaps it with the first element in the unsorted part, growing the sorted part by one element each time.
+
+Complexities :
+| Case    | Complexity |
+| ------- | ---------- |
+| Best    | O(n²)      |
+| Average | O(n²)      |
+| Worst   | O(n²)      |
+
+Code in python
+```
+def sel(arr):
+    for i in range(len(arr)):
+        m=i
+        for j in range(i+1,len(arr)):
+            if arr[j]<arr[m]:
+                m=j
+        arr[i],arr[m]=arr[m],arr[i]
+    return arr
+```
+
+🧮 Space Complexity:
+
+* O(1) (in-place sorting, only swaps elements)
+
+✅ Pros:
+
+ * Simple to understand and implement
+    
+ * No additional memory required
+    
+ * Good for small datasets
+
+
+❌ Cons:
+
+ * Inefficient for large lists
+    
+ * Always takes O(n²) time
+    
+ * More swaps compared to Insertion Sort
+
+
+💡 Use Cases:
+
+ * When simplicity is more important than performance
+    
+ * Sorting very small arrays
+
+#### Insertion Sort:
+
+Insertion Sort is a simple comparison-based sorting algorithm.
+It builds the sorted list one item at a time, by repeatedly inserting the current element into its correct position in the already-sorted part of the array.
+
+Code:
+```
+def ins(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+    return arr
+
+```
+
+📈 Time Complexity:
+| Case            | Comparisons | Shifts   | Time  |
+| --------------- | ----------- | -------- | ----- |
+| Best (sorted)   | n-1         | 0        | O(n)  |
+| Average         | \~n²/4      | \~n²/4   | O(n²) |
+| Worst (reverse) | n(n-1)/2    | n(n-1)/2 | O(n²) |
+
+🧮 Space Complexity
+ * O(1) auxiliary space
+    (In-place sorting, no extra arrays used)
+
+⚙️ Stability: ✅ Stable
+(Preserves the relative order of equal elements)
+
+🧠 Adaptive Nature:✅ Adaptive
+(Performs better if the input is already or nearly sorted)
+
+✅ Advantages
+
+ * Very simple and intuitive
+    
+ * Efficient for small datasets
+    
+ * Adaptive: fast for nearly sorted data
+    
+ * In-place and stable
+    
+ * Works well when insertion cost is low
+
+❌ Disadvantages
+
+ * Inefficient for large datasets
+ * O(n²) time complexity in worst case
+<br>
+
+#### **Bubble sort:**
+
+🔹 Introduction:
+Bubble Sort is a simple comparison-based sorting algorithm. It works by repeatedly swapping adjacent elements if they are in the wrong order. It continues this process until the array is sorted.
+
+✅ Advantages:
+
+ *  Very simple to implement
+ * Stable sorting algorithm
+ *  Works well on nearly sorted arrays
+ * No extra memory needed (in-place)
+
+❌ Disadvantages:
+
+ * Very slow for large datasets
+ * Inefficient compared to other O(n²) sorts like insertion sort
+
+Code:
+```
+def bub(arr):
+    n = len(arr)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+        if not swapped:
+            break
+    return arr
+```
+
+⏱️ Time and Space Complexity:
+
+ * Time (Best Case): O(n) — when array is already sorted
+ * Time (Average/Worst Case): O(n²)
+ * Space: O(1) — no extra memory used
+
+<br>
+    
+#### **Merge sort:**
+  
+🔹 Introduction:
+Merge Sort is a divide-and-conquer algorithm. It divides the array into halves, recursively sorts them, and then merges the sorted halves to produce the final sorted array.
+
+✅ Advantages:
+
+ * Always O(n log n) time complexity
+ * Very stable and predictable performance
+ * Stable sort — maintains the order of equal elements
+
+❌ Disadvantages:
+
+ * Requires additional memory (not in-place)
+ * Slightly slower than quicksort in practice due to overhead
+ * Recursive — can consume more stack space
+
+Code:
+```
+def merge(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left = arr[:mid]
+        right = arr[mid:]
+
+        merge_sort(left)
+        merge_sort(right)
+
+        i = j = k = 0
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                arr[k] = left[i]
+                i += 1
+            else:
+                arr[k] = right[j]
+                j += 1
+            k += 1
+        while i < len(left):
+            arr[k] = left[i]
+            i += 1
+            k += 1
+        while j < len(right):
+            arr[k] = right[j]
+            j += 1
+            k += 1
+    return arr
+
+```
+
+⏱️ Time and Space Complexity:
+
+ * Time (Best, Average, Worst Case): O(n log n)
+ * Space: O(n) — due to extra arrays for merging
+
+#### Quick Sort:
+
+🔹 Introduction:
+Quick Sort is a divide-and-conquer algorithm. It picks a pivot element, partitions the array around the pivot so that elements less than pivot come before, and greater ones after. It then recursively sorts the sub-arrays.
+
+✅ Advantages:
+
+ * Very fast in practice
+ * Efficient on large datasets
+ * In-place sorting (no additional space)
+ * Widely used in system-level sorting functions
+
+❌ Disadvantages:
+
+ * Not stable by default
+ * Worst-case performance is O(n²)
+ * Recursive; risk of stack overflow on large arrays (without optimization)
+
+Python Code:
+```
+def quick(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[0]
+    less = [x for x in arr[1:] if x <= pivot]
+    greater = [x for x in arr[1:] if x > pivot]
+    return quick_sort(less) + [pivot] + quick_sort(greater)
+
+```
+
+⏱️ Time and Space Complexity:
+
+ * Time (Best and Average Case): O(n log n)
+ * Time (Worst Case): O(n²) — when pivot is always the smallest/largest
+ * Space: O(log n) — due to recursion stack (for in-place version)
 
 
 ### II) Medium Problems:
