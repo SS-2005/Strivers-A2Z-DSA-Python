@@ -465,7 +465,144 @@ class Solution(object):
 
         return max_freq
 ```
+* Patterns Problem:
 
+1<br>
+1 2 <br>
+1 2 3<br>
+
+[Link](https://www.naukri.com/code360/problems/n-triangles_6573689)
+
+Code:
+```
+def nTriangle(n:int) ->None:
+    # Write your solution here.
+    for i in range(n+1):
+        for j in range(i):
+            print("{} ".format(j+1),end="")
+        print()
+    pass
+```
+<br>
+
+1<br>
+2 2 <br>
+3 3 3<br>
+
+[Link](https://www.naukri.com/code360/problems/triangle_6573690)
+
+Code:
+```
+def triangle( n:int) ->None:
+    # Write your solution here.
+    for i in range(1,n+1):
+        for j in range(i):
+            print("{} ".format(i),end="")
+        print()
+    pass
+```
+
+
+  *<br>
+ ***<br>
+*****<br>
+
+[Link](https://www.naukri.com/code360/problems/star-triangle_6573671)
+
+Code:
+```
+def nStarTriangle(n: int) -> None:
+    # Write your code here.
+    space=n-1
+    star=1
+    for i in range(n):
+        #space
+        for j in range(space):
+            print(" ",end="")
+        space-=1
+
+        #star
+        for j in range(star):
+            print("*",end="")
+        star+=2
+
+        #next line
+        print() 
+
+    pass
+```
+
+
+*****<br>
+ ***<br>
+  *<br>
+
+[Link](https://www.naukri.com/code360/problems/reverse-star-triangle_6573685)
+
+Code:
+```
+def nStarTriangle(n: int) -> None:
+    # Write your code here.
+
+    #star value
+    star=1
+    #to determine star value
+    for j in range(n-1):
+        star+=2
+    
+    #space value
+    space=0
+
+    #pattern
+    for i in range(n):
+        #space
+        for j in range(space):
+            print(" ",end="")
+        space=space+1
+
+        for j in range(star):
+            print("*",end="")
+        star-=2
+
+        #next line
+        print()
+    pass
+```
+
+1         1<br>
+1 2     2 1<br>
+1 2 3 3 2 1<br>
+
+[Link](https://www.naukri.com/code360/problems/number-crown_6581894)
+
+Code:
+```
+def numberCrown(n: int) -> None:
+    # Write your solution here.
+    line = []
+    space = 2 * n - 2
+
+    for i in range(1, n + 1):
+        line.clear()  # Clear list at the start of each row
+
+        # First sequence (left half)
+        for j in range(1, i + 1):
+            s = "{} ".format(j)
+            line.append(s)
+            print(s, end="")
+
+        # Spaces in between
+        for j in range(space):
+            print(" ", end="")
+        space = space - 2
+
+        # Second sequence (right half - reverse order)
+        for j in range(i, 0, -1):
+            print(j, end=" ")
+        
+        print()  # Move to the next line
+    pass
+```
 
 ### III) Hard Probles:
 
