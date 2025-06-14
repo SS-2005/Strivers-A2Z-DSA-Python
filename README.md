@@ -420,6 +420,63 @@ def quick(arr):
  * Time (Worst Case): O(n²) — when pivot is always the smallest/largest
  * Space: O(log n) — due to recursion stack (for in-place version)
 
+10) Largest Element in an Array
+
+Code:
+```
+def large(arr):
+    arr.sort()
+    return arr[len(arr)-1]
+
+```
+
+11) Second Largest Element in an Array without sorting
+
+Code:
+```
+def SL(arr):
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            if arr[i]>arr[j]:
+                max1=arr[i]
+                max2=arr[j]
+    return max2
+```
+
+12) Check if the array is sorted
+
+Code:
+```
+def IsSorted(arr):
+    return arr==sorted(arr)
+```
+
+13) Remove duplicates from Sorted array
+
+Code:
+```
+def RD(arr):
+    return sorted(set(arr))
+```
+
+14) Left Rotate an array by one place<br>
+[Leetcode](https://leetcode.com/problems/rotate-array/)
+
+Code:
+```
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        if len(nums)<k:
+            for i in range(k):
+                nums.insert(0,nums[len(nums)-1])
+                del(nums[len(nums)-1])
+                nums[:]=nums
+        else:
+            nums[:]=nums[len(nums)-k:]+nums[:len(nums)-k]
+```
 
 ### II) Medium Problems:
 
