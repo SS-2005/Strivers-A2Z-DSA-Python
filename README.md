@@ -477,6 +477,82 @@ class Solution:
         else:
             nums[:]=nums[len(nums)-k:]+nums[:len(nums)-k]
 ```
+15) Move Zeros to end
+[Leetcode](https://leetcode.com/problems/move-zeroes/description/)
+
+Code:
+```
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        Pos=[]
+        for i in range(len(nums)):
+            if nums[i]==0:
+                Pos.append(i)
+        for i in sorted(Pos,reverse=True):
+            del nums[i]
+        for i in range(len(Pos)):
+            nums.append(0)
+        nums[:]=nums
+```
+
+16) Linear Search
+
+Code:
+```
+def LS(nums,x):
+    for i in range(len(nums)):
+        if nums[i]==x:
+            return i
+    return -1
+
+```
+
+17) Find the Union
+
+Code:
+```
+class Solution:
+    def unionArray(self, nums1, nums2):
+        return set(nums1+nums2)
+```
+
+18) Find missing number in an array
+
+[Leetcode](https://leetcode.com/problems/missing-number/description/)
+
+Code:
+```
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        n=len(nums)
+        all=[i for i in range(0,n+1)]
+        for a in all:
+            if a not in nums:
+                return a
+```
+
+19) Maximum Consecutive Ones
+
+[Leetcode](https://leetcode.com/problems/max-consecutive-ones/)
+
+Code:
+```
+class Solution:
+    def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
+        m,c=0,0
+        for i in range(len(nums)):
+            if nums[i]==1:
+                c+=1
+            else:
+                c=0
+            if c>m:
+                m=c
+        return m
+```
+
 
 ### II) Medium Problems:
 
