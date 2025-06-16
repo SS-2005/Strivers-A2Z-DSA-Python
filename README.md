@@ -737,6 +737,98 @@ def numberCrown(n: int) -> None:
     pass
 ```
 
+3) Find the number that appears once, and other numbers twice.
+
+[Leetcode](https://leetcode.com/problems/single-number/description/)
+
+Code:
+```
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        d={}
+        c=1
+        for i in nums:
+            if i in d.keys():
+                d[i]=d[i]+1
+            else:
+                d[i]=c
+        for x,y in d.items():
+            if y==1:
+                return x
+            
+```
+
+4) 	Longest subarray with given sum K(positives) 
+
+[Problem Link](https://takeuforward.org/plus/dsa/problems/longest-subarray-with-sum-k)
+
+Code:
+```
+def lsa(nums,k):
+    n=len(nums)
+    l=0
+    for i in range(n):
+        sum=0
+        for j in range(i,n):
+            sum+=nums[j]
+            if sum==k:
+                l=max(l,j-i+1)
+    return l
+```
+
+5) 2Sum Problem
+
+[Leetcode](https://leetcode.com/problems/two-sum/description/)
+
+Code:
+```
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        for i in range(len(nums)-1):
+            for j in range(len(nums)-1,-1,-1):
+                if i!=j:
+                    if nums[i]+nums[j]==target:
+                        return[i,j]
+```
+
+6) Sort an array of 0's 1's and 2's
+
+[Leetcode](https://leetcode.com/problems/sort-colors/)
+
+Code:
+```
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        nums.sort()
+```
+
+7) Majority Element (>n/2 times) 
+
+[Leetcode](https://leetcode.com/problems/majority-element/)
+
+Code:
+```
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        d={}
+        c=1
+        for num in nums:
+            if num not in d.keys():
+                d[num]=c
+            else:
+                d[num]+=1
+        return max(d,key=d.get)
+```
+
+
 ### III) Hard Probles:
 
 `Note : Will Update within 24 Hours`
