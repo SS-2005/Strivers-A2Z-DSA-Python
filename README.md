@@ -552,6 +552,37 @@ class Solution:
                 m=c
         return m
 ```
+20) Kadane's Algorithm, maximum subarray sum
+
+[Leetcode](https://leetcode.com/problems/maximum-subarray/description/)
+
+Code:
+```
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        cs=ms=nums[0]
+        for i in range(1,len(nums)):
+            cs=max(nums[i],cs+nums[i])
+            ms=max(ms,cs)
+        return ms
+```
+
+21) Sell and Buy Stock
+
+[Leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
+Code:
+```
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        profit=0
+        mini=prices[0]
+        for i in range(1,len(prices)):
+            cost=prices[i]-mini
+            profit=max(profit,cost)
+            mini=min(mini,prices[i])
+        return profit
+
+```
 
 
 ### II) Medium Problems:
@@ -826,6 +857,72 @@ class Solution:
             else:
                 d[num]+=1
         return max(d,key=d.get)
+```
+
+8) Print subarray with maximum subarray sum
+
+Code:
+```
+def maxSubArray(nums):
+    cs=ms=nums[0]
+    for i in range(1,len(nums)):
+        if nums[i]>cs+nums[i]:
+            cs=nums[i]
+            temp=i
+        else:
+            cs+=nums[i]
+        if cs>ms:
+            ms=cs
+            start=temp
+            end=i
+
+    print("Max",ms)
+    print("Subarray",nums[start:end+1])
+    return ms
+```
+
+9) Rearrange the array in alternating positive and negative items
+
+[Leetcode](https://leetcode.com/problems/rearrange-array-elements-by-sign/description/)
+
+Code:
+```
+class Solution:
+    def rearrangeArray(self, nums: List[int]) -> List[int]:
+        pos,neg,r=[],[],[]
+        for num in nums:
+            if num>0:
+                pos.append(num)
+            else:
+                neg.append(num)
+        for i in range(len(nums)//2):
+            r.append(pos[i])
+            r.append(neg[i])
+        return r
+```
+
+10) Next Permutation
+
+[Leetcode](https://leetcode.com/problems/next-permutation/description/)
+
+Code:
+```
+class Solution:
+    def nextPermutation(self, nums: List[int]) -> None:
+        index = -1
+        for i in range(len(nums) - 2, -1, -1):
+            if nums[i] < nums[i + 1]:
+                index = i
+                break
+        if index == -1:
+            nums.reverse()
+            return
+        for i in range(len(nums) - 1, index, -1):
+            if nums[i] > nums[index]:
+                nums[i], nums[index] = nums[index], nums[i]
+                break
+        nums[index + 1:] = reversed(nums[index + 1:])
+
 ```
 
 
