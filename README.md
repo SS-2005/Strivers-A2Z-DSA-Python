@@ -584,6 +584,22 @@ class Solution:
 
 ```
 
+22) Leaders in an Array problem
+
+Code:
+```
+class Solution:
+    def leaders(self, nums):
+        leads=[]
+        mini=nums[len(nums)-1]
+        leads.append(mini)
+        for i in range(len(nums)-2,-1,-1):
+            if nums[i]>mini:
+                leads.append(nums[i])
+                mini=max(nums[i],mini)
+        return leads[::-1]
+```
+
 
 ### II) Medium Problems:
 
@@ -923,6 +939,117 @@ class Solution:
                 break
         nums[index + 1:] = reversed(nums[index + 1:])
 
+```
+11) Longest Consecutive Sequence in an Array
+
+[Leetcode](https://leetcode.com/problems/longest-consecutive-sequence/editorial/)
+
+Code:
+```
+class Solution:
+    def longestConsecutive(self, nums):
+        nums.sort()
+        l=1
+        cl=0
+        start=nums[0]
+        for i in range(1,len(nums)):
+            if nums[i]==start+1:
+                l+=1
+                start=start+1
+            elif nums[i]==start:
+                pass
+            else:
+                cl=max(cl,l)
+                l=1
+                start=nums[i]
+        l=max(cl,l)
+        return l
+```
+
+12) Set Matrix Zeros
+
+[Leetcode](https://leetcode.com/problems/set-matrix-zeroes/description/)
+
+Code:
+```
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        row,col=[],[]
+        #finding pos of zero
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                if matrix[i][j]==0:
+                    row.append(i)
+                    col.append(j)
+        #setting row/col to 0
+        for i in row:
+            for j in range(len(matrix[0])):
+                matrix[i][j]=0
+        for i in range(len(matrix)):
+            for j in col:
+                matrix[i][j]=0
+        matrix[:]=matrix
+```
+
+13) Rotate Matrix by 90 degrees
+
+[Leetcode](https://leetcode.com/problems/rotate-image/description/)
+
+Code:
+```
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        ans=[[0]* len(matrix) for _ in range(len(matrix))]
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                ans[j][len(matrix)-1-i]=matrix[i][j]
+        matrix[:]=ans
+```
+
+14) Print the matrix in spiral manner
+
+[Leetcode](https://leetcode.com/problems/spiral-matrix/description/)
+
+Code:
+```
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        n = len(matrix)
+        m = len(matrix[0])
+        left, right = 0, m - 1
+        top, bottom = 0, n - 1
+        ans = []
+        
+        while top <= bottom and left <= right:
+            # top row
+            for i in range(left, right + 1):
+                ans.append(matrix[top][i])
+            top += 1
+            
+            # right column
+            for i in range(top, bottom + 1):
+                ans.append(matrix[i][right])
+            right -= 1
+            
+            if top <= bottom:
+                # bottom row (reverse)
+                for i in range(right, left - 1, -1):
+                    ans.append(matrix[bottom][i])
+                bottom -= 1
+            
+            if left <= right:
+                # left column (reverse)
+                for i in range(bottom, top - 1, -1):
+                    ans.append(matrix[i][left])
+                left += 1
+        
+        return ans
 ```
 
 
