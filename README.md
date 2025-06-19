@@ -1052,6 +1052,173 @@ class Solution:
         return ans
 ```
 
+15) Count subarrays with given sum
+
+[Leetcode](https://leetcode.com/problems/subarray-sum-equals-k/description/)
+
+Code:
+```
+from collections import defaultdict
+
+class Solution:
+    def subarraySum(self, nums, k):
+        prefix_sums = defaultdict(int)  # Stores frequency of each prefix sum
+        prefix_sums[0] = 1              # Base case: one way to have a sum = 0 before starting
+
+        current_sum = 0  # To store the sum of elements from index 0 to i
+        count = 0        # To count valid subarrays
+
+        for num in nums:
+            current_sum += num   # Step 1: Update the running prefix sum
+
+            # Step 2: Check if there's a prefix_sum such that current_sum - prefix_sum == k
+            if (current_sum - k) in prefix_sums:
+                count += prefix_sums[current_sum - k]
+                # This means there are `prefix_sums[current_sum - k]` subarrays ending here with sum = k
+
+            # Step 3: Update the map with the current prefix_sum
+            prefix_sums[current_sum] += 1
+
+        return count
+```
+
+16) Pascal's Triangle
+
+[Leetcode](https://leetcode.com/problems/pascals-triangle/description/)
+
+Code:
+```
+class Solution:
+    def generate(self, numRows):
+        result = []
+
+        for row_num in range(numRows):
+            row = [1] * (row_num + 1)  # Start with all 1s
+
+            for j in range(1, row_num):
+                # Use previous row to compute current row's inner elements
+                row[j] = result[row_num - 1][j - 1] + result[row_num - 1][j]
+
+            result.append(row)
+
+        return result
+```
+
+17) Majority Element (n/3 times)
+
+[Leetcode](https://leetcode.com/problems/majority-element-ii/description/)
+
+Code:
+```
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        from collections import defaultdict
+
+        count = defaultdict(int)
+        for num in nums:
+            count[num] += 1
+
+        result = []
+        n = len(nums)
+        for num, freq in count.items():
+            if freq > n // 3:
+                result.append(num)
+
+        return result
+```
+
+18) 3-Sum Problem
+
+[Leetcode](https://leetcode.com/problems/3sum/description/)
+
+Code:
+```
+class Solution:
+    def threeSum(self, nums):
+        nums.sort()
+        res = []
+
+        for i in range(len(nums)):
+            # Skip duplicate elements
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue
+
+            left, right = i + 1, len(nums) - 1
+
+            while left < right:
+                total = nums[i] + nums[left] + nums[right]
+
+                if total == 0:
+                    res.append([nums[i], nums[left], nums[right]])
+
+                    # Skip duplicates for left and right
+                    while left < right and nums[left] == nums[left + 1]:
+                        left += 1
+                    while left < right and nums[right] == nums[right - 1]:
+                        right -= 1
+
+                    left += 1
+                    right -= 1
+
+                elif total < 0:
+                    left += 1  # Need bigger sum
+                else:
+                    right -= 1  # Need smaller sum
+
+        return res
+```
+
+19) 4-Sum Problem
+
+[Leetcode](https://leetcode.com/problems/4sum/description/)
+
+Code:
+```
+class Solution:
+    def fourSum(self, nums, target):
+        nums.sort()
+        n = len(nums)
+        res = []
+
+        for i in range(n):
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue  # Skip duplicates for i
+
+            for j in range(i + 1, n):
+                if j > i + 1 and nums[j] == nums[j - 1]:
+                    continue  # Skip duplicates for j
+
+                left = j + 1
+                right = n - 1
+
+                while left < right:
+                    total = nums[i] + nums[j] + nums[left] + nums[right]
+
+                    if total == target:
+                        res.append([nums[i], nums[j], nums[left], nums[right]])
+
+                        # Skip duplicates for left and right
+                        while left < right and nums[left] == nums[left + 1]:
+                            left += 1
+                        while left < right and nums[right] == nums[right - 1]:
+                            right -= 1
+
+                        left += 1
+                        right -= 1
+
+                    elif total < target:
+                        left += 1
+                    else:
+                        right -= 1
+
+        return res
+```
+
+
 
 ### III) Hard Probles:
 
