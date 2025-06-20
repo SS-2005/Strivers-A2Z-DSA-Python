@@ -1218,7 +1218,50 @@ class Solution:
         return res
 ```
 
+20) Merge Overlapping Subintervals
 
+[Leetcode](https://leetcode.com/problems/merge-intervals/description/)
+
+Code:
+```
+class Solution(object):
+    def merge(self, intervals):
+        """
+        :type intervals: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        if not intervals:
+            return []
+        intervals.sort()
+        st=intervals[0]
+        ans=[]
+        for i in range(1,len(intervals)):
+            if st[1] >= intervals[i][0]:
+                st[1]=max(st[1],intervals[i][1])
+            else:
+                ans.append(st)
+                st=intervals[i]
+        ans.append(st)
+        return ans
+```
+
+21) Merge two sorted arrays without extra space
+
+[Leetcode](https://leetcode.com/problems/merge-sorted-array/description/)
+
+Code:
+```
+class Solution(object):
+    def merge(self, nums1, m, nums2, n):
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        trimmed = nums1[:m]
+        merged = trimmed + nums2
+        merged.sort()
+        for i in range(m + n):
+            nums1[i] = merged[i]
+```
 
 ### III) Hard Probles:
 
