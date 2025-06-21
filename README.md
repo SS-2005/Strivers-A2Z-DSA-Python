@@ -1265,6 +1265,87 @@ class Solution(object):
 
 ### III) Hard Probles:
 
+1) Maximum Product Subarray
+
+[Leetcode](https://leetcode.com/problems/maximum-product-subarray/description/)
+
+Code:
+```
+class Solution(object):
+    def maxProduct(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+
+        if not nums:
+            return 0
+
+        max_prod = min_prod = result = nums[0]
+
+        for num in nums[1:]:
+            if num < 0:
+                max_prod, min_prod = min_prod, max_prod
+
+            max_prod = max(num, num * max_prod)
+            min_prod = min(num, num * min_prod)
+
+            result = max(result, max_prod)
+
+        return result
+```
+
+2) Reverse Pairs
+
+[Leetcode](https://leetcode.com/problems/reverse-pairs/description/)
+
+Code:
+```
+class Solution(object):
+    def reversePairs(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+
+        def merge_sort(start, end):
+            if start >= end:
+                return 0
+            mid = (start + end) // 2
+            count = merge_sort(start, mid) + merge_sort(mid + 1, end)
+            
+            # Count reverse pairs
+            j = mid + 1
+            for i in range(start, mid + 1):
+                while j <= end and nums[i] > 2 * nums[j]:
+                    j += 1
+                count += j - (mid + 1)
+            
+            # Merge the two sorted halves
+            temp = []
+            left, right = start, mid + 1
+            while left <= mid and right <= end:
+                if nums[left] <= nums[right]:
+                    temp.append(nums[left])
+                    left += 1
+                else:
+                    temp.append(nums[right])
+                    right += 1
+            while left <= mid:
+                temp.append(nums[left])
+                left += 1
+            while right <= end:
+                temp.append(nums[right])
+                right += 1
+            
+            # Copy sorted elements back to original array
+            nums[start:end+1] = temp
+            return count
+
+        return merge_sort(0, len(nums) - 1)
+```
+
+
 `Note : Will Update within 24 Hours`
 
 ---
