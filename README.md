@@ -1262,6 +1262,91 @@ class Solution(object):
         for i in range(m + n):
             nums1[i] = merged[i]
 ```
+22) Binary Search to find X in sorted array
+
+[Leetcode](https://leetcode.com/problems/binary-search/description/)
+
+Code:
+```
+class Solution(object):
+    def search(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        st=0
+        end=len(nums)-1
+        while st<=end:
+            mid=(st+end)//2
+            if target==nums[mid]:
+                return mid
+            elif target>nums[mid]:
+                st=mid+1
+            else:
+                end=mid-1
+        return -1
+```
+
+23) Search Insert Position
+
+[Leetcode](https://leetcode.com/problems/search-insert-position/description/)
+
+Code:
+```
+class Solution(object):
+    def searchInsert(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        st=0
+        end=len(nums)-1
+        while st<=end:
+            mid=(st+end)//2
+            if target==nums[mid]:
+                return mid
+            elif target>nums[mid]:
+                st=mid+1
+            elif target<nums[mid]:
+                end=mid-1
+        return st
+```
+
+24) Find the first or last occurrence of a given number in a sorted array
+
+[Leetcode](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/)
+
+Code:
+```
+class Solution(object):
+    def searchRange(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        return [self.binarysearch(nums,target,True),self.binarysearch(nums,target,False)]
+    def binarysearch(self,nums,target,First):
+        st=0
+        end=len(nums)-1
+        result=-1
+        while st<=end:
+            mid=(st+end)//2
+            if target>nums[mid]:
+                st=mid+1
+            elif target<nums[mid]:
+                end=mid-1
+            elif target==nums[mid]:
+                result=mid
+                if First:
+                    end=mid-1
+                else:
+                    st=mid+1
+        return result
+```
+
 
 ### III) Hard Probles:
 
