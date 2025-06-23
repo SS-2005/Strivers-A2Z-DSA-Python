@@ -1347,6 +1347,144 @@ class Solution(object):
         return result
 ```
 
+25) Search in Rotated Sorted Array I
+
+[Leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
+
+Code:
+```
+class Solution(object):
+    def search(self, nums, target):
+        left, right = 0, len(nums) - 1
+        
+        while left <= right:
+            mid = (left + right) // 2
+            
+            if nums[mid] == target:
+                return mid
+
+            # Check if the left half is sorted
+            if nums[left] <= nums[mid]:
+                if nums[left] <= target < nums[mid]:
+                    right = mid - 1
+                else:
+                    left = mid + 1
+            # Otherwise, the right half is sorted
+            else:
+                if nums[mid] < target <= nums[right]:
+                    left = mid + 1
+                else:
+                    right = mid - 1
+                    
+        return -1
+
+```
+
+26) Search in Rotated Sorted Array II
+
+[Leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/description/)
+
+Code:
+```
+class Solution(object):
+    def search(self, nums, target):
+        st, end = 0, len(nums) - 1
+        while st <= end:
+            mid = (st + end) // 2
+            if nums[mid] == target:
+                return True
+
+            # If we can't be sure about the sorted part due to duplicates
+            if nums[st] == nums[mid] == nums[end]:
+                st += 1
+                end -= 1
+            # Left half is sorted
+            elif nums[st] <= nums[mid]:
+                if nums[st] <= target < nums[mid]:
+                    end = mid - 1
+                else:
+                    st = mid + 1
+            # Right half is sorted
+            else:
+                if nums[mid] < target <= nums[end]:
+                    st = mid + 1
+                else:
+                    end = mid - 1
+        return False
+
+```
+
+27) Find minimum in Rotated Sorted Array
+
+[Leetcode](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
+
+Code:
+```
+class Solution(object):
+    def findMin(self, nums):
+        st, end = 0, len(nums) - 1
+        
+        while st < end:
+            mid = (st + end) // 2
+            
+            # If mid element is greater than end, the min is in right half
+            if nums[mid] > nums[end]:
+                st = mid + 1
+            else:
+                # Min could be at mid or in left half
+                end = mid
+                
+        # Loop ends when st == end, which is the index of the minimum
+        return nums[st]
+```
+
+28) Single element in a Sorted Array
+
+[Leetcode](https://leetcode.com/problems/single-element-in-a-sorted-array/description/)
+
+Code:
+```
+class Solution(object):
+    def singleNonDuplicate(self, nums):
+        st, end = 0, len(nums) - 1
+        while st < end:
+            mid = (st + end) // 2
+            
+            # Ensure mid is even for correct pairing
+            if mid % 2 == 1:
+                mid -= 1
+            
+            if nums[mid] == nums[mid + 1]:
+                st = mid + 2  # move right
+            else:
+                end = mid  # move left
+        
+        return nums[st]
+```
+
+29) Find peak element
+
+[Leetcode](https://leetcode.com/problems/find-peak-element/description/)
+
+Code:
+```
+class Solution(object):
+    def findPeakElement(self, nums):
+        left, right = 0, len(nums) - 1
+
+        while left < right:
+            mid = (left + right) // 2
+            if nums[mid] < nums[mid + 1]:
+                left = mid + 1  # Peak is in the right half
+            else:
+                right = mid  # Peak is in the left half or at mid
+
+        return left  # or right, both are same here
+```
+
+
+
+
 
 ### III) Hard Probles:
 
