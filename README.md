@@ -1568,6 +1568,84 @@ class Solution(object):
         return merge_sort(0, len(nums) - 1)
 ```
 
+3) The Number Pattern
+
+[Link](https://www.naukri.com/code360/problems/ninja-and-the-number-pattern-i_6581959?utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_patternproblems)
+
+Code:
+```
+def getNumberPattern(n: int) -> None:
+    # Write your solution here.
+    size = 2 * n - 1  # Define the size of the square matrix
+
+    for i in range(size):
+        for j in range(size):
+            # Compute value based on the minimum distance to the border
+            value = n - min(i, j, size - 1 - i, size - 1 - j)
+            print(value, end="")  # Print value without spaces
+        print()  # Move to next line
+    pass
+
+```
+
+4) The Star Pattern I
+
+[Link](https://www.naukri.com/code360/problems/ninja-and-the-star-pattern-i_6581920?utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_patternproblems)
+
+Code:
+```
+def getStarPattern(n: int) -> None:
+    # Write your solution here.
+    for i in range(1,n+1):
+        for j in range(1,n+1):
+            if i==1 or i==n or j==1 or j==n:
+                print("*",end="")
+            else:
+                print(" ",end="")
+        print()
+
+
+    pass
+```
+
+5) Symmetry
+
+[Link](https://www.naukri.com/code360/problems/symmetry_6581914?utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_patternproblems)
+
+Code:
+```
+def symmetry(n: int):
+    # Upper half including the middle row
+    spaces = 2 * (n - 1)
+    for i in range(1, n + 1):
+        # Print left stars
+        print("* " * i, end="")
+        
+        # Print spaces
+        print("  " * spaces, end="")
+        
+        # Print right stars
+        if i != n:
+            print("* " * i)
+        else:
+            print("* " * (i - 1) + "*")
+        
+        spaces -= 2
+    
+    # Lower half
+    spaces = 2
+    for i in range(n - 1, 0, -1):
+        # Print left stars
+        print("* " * i, end="")
+        
+        # Print spaces
+        print("  " * spaces, end="")
+        
+        # Print right stars
+        print("* " * i)
+        
+        spaces += 2
+```
 
 `Note : Will Update within 24 Hours`
 
