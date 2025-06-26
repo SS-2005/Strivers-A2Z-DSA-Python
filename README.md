@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/8f6788db-0a3b-4ffd-84f7-e0163d720a26)![image](https://github.com/user-attachments/assets/8f6788db-0a3b-4ffd-84f7-e0163d720a26)# Strivers-A2Z-DSA-Python
+# Strivers-A2Z-DSA-Python
 
 ---
 ## Introduction:
