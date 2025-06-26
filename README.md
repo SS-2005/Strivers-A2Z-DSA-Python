@@ -1,4 +1,4 @@
-# Strivers-A2Z-DSA-Python
+![image](https://github.com/user-attachments/assets/8f6788db-0a3b-4ffd-84f7-e0163d720a26)![image](https://github.com/user-attachments/assets/8f6788db-0a3b-4ffd-84f7-e0163d720a26)# Strivers-A2Z-DSA-Python
 
 ---
 ## Introduction:
@@ -1482,8 +1482,35 @@ class Solution(object):
         return left  # or right, both are same here
 ```
 
+30) Search a 2D Matrix
 
+[Leetcode](https://leetcode.com/problems/search-a-2d-matrix/description/)
 
+Code:
+```
+class Solution(object):
+    def searchMatrix(self, matrix, target):
+        if not matrix or not matrix[0]:
+            return False
+
+        m, n = len(matrix), len(matrix[0])
+        low, high = 0, m * n - 1
+
+        while low <= high:
+            mid = (low + high) // 2
+            row = mid // n
+            col = mid % n
+            mid_val = matrix[row][col]
+
+            if mid_val == target:
+                return True
+            elif mid_val < target:
+                low = mid + 1
+            else:
+                high = mid - 1
+
+        return False
+```
 
 
 ### III) Hard Probles:
