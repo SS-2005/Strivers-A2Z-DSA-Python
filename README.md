@@ -600,6 +600,128 @@ class Solution:
         return leads[::-1]
 ```
 
+23) Implement Lower Bound:
+
+Code:
+```
+class Solution:
+    def lowerBound(self, nums, x):
+        st,end=0,len(nums)-1
+        index=len(nums)
+        while st<=end:
+            mid=(st+end)//2
+            if nums[mid]>=x:
+                index=mid
+                end=mid-1
+            else:
+                st=mid+1
+        return index
+```
+
+
+
+24) Implement Upper Bound
+
+Code:
+```
+class Solution:
+    def upperBound(self, nums, x):
+        st,end=0,len(nums)-1
+        index=len(nums)
+        while st<=end:
+            mid=(st+end)//2
+            if nums[mid]>x:
+                index=mid
+                end=mid-1
+            else:
+                st=mid+1
+        return index
+```
+
+25) Search Insert Position:  
+[Leetcode](https://leetcode.com/problems/search-insert-position/description/)
+
+Code:
+```
+class Solution(object):
+    def searchInsert(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        st=0
+        end=len(nums)-1
+        while st<=end:
+            mid=(st+end)//2
+            if target==nums[mid]:
+                return mid
+            elif target>nums[mid]:
+                st=mid+1
+            elif target<nums[mid]:
+                end=mid-1
+        return st
+```
+
+26) Floor/Ceil in Sorted Array
+
+Code:
+```
+class Solution:
+    def getFloorAndCeil(self, nums, x):
+        st,end=0,len(nums)-1
+        floor,ceil=-1,-1
+        while st<=end:
+            mid=(st+end)//2
+            if nums[mid]<x:
+                floor=nums[mid]
+                st=mid+1
+            elif x<nums[mid]:
+                ceil=nums[mid]
+                end=mid-1
+            elif nums[mid]==x:
+                return x,x
+        return floor,ceil
+```
+
+27) Find the first or last occurrence of a given number in a sorted array:
+
+[Leetcode](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/)
+
+
+Code:
+```
+class Solution(object):
+    def searchRange(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        return [self.binarysearch(nums,target,True),self.binarysearch(nums,target,False)]
+
+    def binarysearch(self,nums,target,First):
+        st=0
+        end=len(nums)-1
+        result=-1
+        while st<=end:
+            mid=(st+end)//2
+            if target>nums[mid]:
+                st=mid+1
+            elif target<nums[mid]:
+                end=mid-1
+            elif target==nums[mid]:
+                result=mid
+                if First:
+                    end=mid-1
+                else:
+                    st=mid+1
+        return result
+```
+
+<br>
+
+---
 
 ### II) Medium Problems:
 
@@ -1512,6 +1634,7 @@ class Solution(object):
         return False
 ```
 
+---
 
 ### III) Hard Probles:
 
