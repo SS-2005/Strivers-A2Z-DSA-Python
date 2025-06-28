@@ -1634,6 +1634,41 @@ class Solution(object):
         return False
 ```
 
+31) Count occurrences of a number in a sorted array with duplicates
+
+Code:
+```
+def o(nums,k):
+    def f(nums,k,first):
+        st,end=0,len(nums)-1
+        ans=-1
+        while st<=end:
+            mid=(st+end)//2
+            if nums[mid]==k:
+                ans=mid
+                if first:
+                    end=mid-1
+                else:
+                    st=mid+1
+            elif nums[mid]<k:
+                st=mid+1
+            elif nums[mid]>k:
+                end=mid-1
+        return ans
+
+    s=f(nums,k,True)
+    e=f(nums,k,False)
+    if s==-1 or e==-1:
+        return 0
+    else:
+        return len(nums[s:e+1])
+
+    
+o([0,1,2,3,3,3,4,4,4,4,4,4,4,4,4,9],4)
+9
+o([1, 2, 3, 5, 6], 4)
+0
+```
 ---
 
 ### III) Hard Probles:
