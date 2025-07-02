@@ -1542,22 +1542,22 @@ class Solution(object):
 
 Code:
 ```
-class Solution(object):
-    def findMin(self, nums):
-        st, end = 0, len(nums) - 1
+def findMin(self, nums):
+    st, end = 0, len(nums) - 1
         
-        while st < end:
-            mid = (st + end) // 2
+    while st < end:
+        mid = (st + end) // 2
             
-            # If mid element is greater than end, the min is in right half
-            if nums[mid] > nums[end]:
-                st = mid + 1
-            else:
-                # Min could be at mid or in left half
-                end = mid
+        # If mid element is greater than end, the min is in right half
+        if nums[mid] > nums[end]:
+            st = mid + 1
+        else:
+            # Min could be at mid or in left half
+            end = mid
                 
         # Loop ends when st == end, which is the index of the minimum
-        return nums[st]
+    return nums[st]
+
 ```
 
 28) Single element in a Sorted Array
@@ -1566,7 +1566,6 @@ class Solution(object):
 
 Code:
 ```
-class Solution(object):
     def singleNonDuplicate(self, nums):
         st, end = 0, len(nums) - 1
         while st < end:
@@ -1590,7 +1589,6 @@ class Solution(object):
 
 Code:
 ```
-class Solution(object):
     def findPeakElement(self, nums):
         left, right = 0, len(nums) - 1
 
