@@ -769,6 +769,8 @@ class Solution(object):
 ```
 * Patterns Problem:
 
+All Problems Link : [Easy to hard (With Solutions)](https://takeuforward.org/strivers-a2z-dsa-course/must-do-pattern-problems-before-starting-dsa/)
+
 1<br>
 1 2 <br>
 1 2 3<br>
