@@ -1793,7 +1793,11 @@ def getStarPattern(n: int) -> None:
     pass
 ```
 
-5) Symmetry
+5) Find out how many times the array has been rotated
+
+[Link](https://takeuforward.org/arrays/find-out-how-many-times-the-array-has-been-rotated/)
+
+7) Symmetry
 
 [Link](https://www.naukri.com/code360/problems/symmetry_6581914?utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_patternproblems)
 
