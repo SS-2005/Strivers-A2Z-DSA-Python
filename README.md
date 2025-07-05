@@ -719,6 +719,34 @@ class Solution(object):
         return result
 ```
 
+28) Reverse Integer
+
+[Leetcode](https://leetcode.com/problems/reverse-integer/description/)
+
+Code:
+```
+class Solution(object):
+    def reverse(self, no):
+        """
+        :type no: int
+        :rtype: int
+        """
+        s=str(no)
+        if no > 0:
+            rev=s[::-1].lstrip('0')
+            f=int(rev)
+        elif no==0:
+            return 0
+        else:
+            t=s[len(s):0:-1]
+            rev=int(t)
+            f=-rev
+        if f > 2**31 - 1 or f < -2**31:
+            return 0
+        return f
+```
+
+
 <br>
 
 ---
