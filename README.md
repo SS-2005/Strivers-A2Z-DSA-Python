@@ -915,10 +915,10 @@ def nStarTriangle(n: int) -> None:
 
 ```
 Pattern
-1             1<br>
-1 2         2 1<br>
-1 2 3     3 2 1<br>
-1 2 3 4 4 3 2 1<br>
+1             1
+1 2         2 1
+1 2 3     3 2 1
+1 2 3 4 4 3 2 1
 ```
 
 [Link](https://www.naukri.com/code360/problems/number-crown_6581894)
