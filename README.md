@@ -911,29 +911,19 @@ Code:
 ```
 def numberCrown(n: int) -> None:
     # Write your solution here.
-    line = []
-    space = 2 * n - 2
-
-    for i in range(1, n + 1):
-        line.clear()  # Clear list at the start of each row
-
-        # First sequence (left half)
-        for j in range(1, i + 1):
-            s = "{} ".format(j)
-            line.append(s)
-            print(s, end="")
-
-        # Spaces in between
-        for j in range(space):
-            print(" ", end="")
-        space = space - 2
-
-        # Second sequence (right half - reverse order)
-        for j in range(i, 0, -1):
-            print(j, end=" ")
+    space=2*n-2
+    for i in range(1,n+1):
+        for j in range(1,i+1):
+            print(f"{j} ",end="")
         
-        print()  # Move to the next line
-    pass
+        for sp in range(space):
+            print("  ",end="")
+        space-=2
+
+        for j in range(i,0,-1):
+            print(f"{j} ",end="")
+        
+        print()
 ```
 
 3) Find the number that appears once, and other numbers twice.
