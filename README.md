@@ -926,6 +926,80 @@ def numberCrown(n: int) -> None:
         print()
 ```
 
+A 
+
+A B 
+
+A B C 
+
+A B C D 
+
+A B C D E 
+
+[Link](https://bit.ly/3GyWCYs)
+
+Code:
+```
+def nLetterTriangle(n: int) -> None:
+    # Write your solution here.
+    for i in range(1,n+1):
+        for j in range(i):
+            print(f"{chr(65+j)} ",end="")
+        print()
+
+```
+
+    A
+    
+  A B A
+
+A B C B A
+
+[Link](https://bit.ly/3jJ7CcR)
+
+Code:
+```
+def alphaHill(n: int):
+    # Write your solution from here.
+    space=n-1
+    for i in range(n):
+        #space
+        for sp in range(space):
+            print(" ",end="")
+        space-=1
+
+        #char increasing to A
+        for ch in range(0,i+1):
+            print(f"{chr(65+ch)} ",end="")
+
+        #char decreasing to A
+        for ch in range(i-1,-1,-1):
+            print(f"{chr(65+ch)} ",end="")
+
+        #next line
+        print()
+```
+
+
+C
+
+C B 
+
+C B A
+
+[Link](https://bit.ly/3Z3scot)
+
+Code:
+```
+def alphaTriangle(n: int):
+    # Write your solution here.
+    for i in range(1,n+1):
+        for j in range(i):
+            print(f"{chr(65+n-1-j)} ",end="") 
+        print() 
+```
+
+
 3) Find the number that appears once, and other numbers twice.
 
 [Leetcode](https://leetcode.com/problems/single-number/description/)
