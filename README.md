@@ -817,6 +817,8 @@ def nTriangle(n:int) ->None:
 ```
 <br>
 
+--
+
 1<br>
 2 2 <br>
 3 3 3<br>
@@ -834,10 +836,14 @@ def triangle( n:int) ->None:
     pass
 ```
 
+--
 
-  *<br>
- ***<br>
-*****<br>
+Pattern
+```
+  *
+ ***
+*****
+```
 
 [Link](https://www.naukri.com/code360/problems/star-triangle_6573671)
 
@@ -864,10 +870,14 @@ def nStarTriangle(n: int) -> None:
     pass
 ```
 
+--
 
-*****<br>
- ***<br>
-  *<br>
+```
+Pattern
+*****
+ ***
+  *
+```
 
 [Link](https://www.naukri.com/code360/problems/reverse-star-triangle_6573685)
 
@@ -901,9 +911,15 @@ def nStarTriangle(n: int) -> None:
     pass
 ```
 
-1         1<br>
-1 2     2 1<br>
-1 2 3 3 2 1<br>
+--
+
+```
+Pattern
+1             1<br>
+1 2         2 1<br>
+1 2 3     3 2 1<br>
+1 2 3 4 4 3 2 1<br>
+```
 
 [Link](https://www.naukri.com/code360/problems/number-crown_6581894)
 
@@ -926,15 +942,15 @@ def numberCrown(n: int) -> None:
         print()
 ```
 
+--
+
+
 A 
 
 A B 
 
 A B C 
 
-A B C D 
-
-A B C D E 
 
 [Link](https://bit.ly/3GyWCYs)
 
@@ -949,11 +965,13 @@ def nLetterTriangle(n: int) -> None:
 
 ```
 
-    A
-    
-  A B A
+--
 
-A B C B A
+
+  A
+    
+A B A
+
 
 [Link](https://bit.ly/3jJ7CcR)
 
@@ -980,6 +998,8 @@ def alphaHill(n: int):
         print()
 ```
 
+--
+
 
 C
 
@@ -999,7 +1019,10 @@ def alphaTriangle(n: int):
         print() 
 ```
 
+--
 
+```
+Pattern
 * * * * * * 
 
 * *     * * 
@@ -1011,7 +1034,7 @@ def alphaTriangle(n: int):
 * *     * * 
 
 * * * * * * 
-
+```
 
 [Link](https://takeuforward.org/pattern/pattern-19-symmetric-void-pattern/)
 
@@ -1065,6 +1088,61 @@ def symmetry(N: int):
         print()
 ```
 
+--
+
+
+```
+Pattern
+*****
+*   *
+*   *
+*   *
+*****
+```
+
+[Link](https://bit.ly/3vBpdpy)
+
+Code:
+```
+def getStarPattern(n: int) -> None:
+    # Write your solution here.
+    for i in range(n):
+        for j in range(n):
+            if i==0 or i==n-1 or j==0 or j==n-1:
+                print("*",end="")
+            else:
+                print(" ",end="")
+        print()
+```
+
+--
+
+```
+Pattern
+4444444
+4333334
+4322234
+4321234
+4322234
+4333334
+4444444
+```
+
+[Link](https://bit.ly/3vtRNJJ)
+
+Code:
+```
+def getNumberPattern(n: int) -> None:
+    # Write your solution here.
+    size=2*n-1
+    for i in range(size):
+        for j in range(size):
+            value=n-min(i,j,size-1-i,size-1-j)
+            print(value,end="")
+        print()
+```
+
+-
 
 3) Find the number that appears once, and other numbers twice.
 
