@@ -1000,6 +1000,72 @@ def alphaTriangle(n: int):
 ```
 
 
+* * * * * * 
+
+* *     * * 
+
+*         * 
+
+*         * 
+
+* *     * * 
+
+* * * * * * 
+
+
+[Link](https://takeuforward.org/pattern/pattern-19-symmetric-void-pattern/)
+
+Code:
+```
+def symmetry(N: int):
+    star=N
+    space=0
+    r_star=N
+    r_space=0
+    for i in range(N):
+        for s in range(star):
+            print("* ",end="")
+        star-=1
+
+        for s in range(space):
+            print("  ",end="")
+        space+=1
+
+        for s in range(r_space):
+            print("  ",end="")
+        r_space+=1
+
+        for s in range(r_star):
+            print("* ",end="")
+        r_star-=1
+
+        print()
+
+    star=1
+    space=N-1
+    r_star=1
+    r_space=N-1
+    for i in range(N):
+        for s in range(star):
+            print("* ",end="")
+        star+=1
+
+        for s in range(space):
+            print("  ",end="")
+        space-=1
+
+        for s in range(r_space):
+            print("  ",end="")
+        r_space-=1
+
+        for s in range(r_star):
+            print("* ",end="")
+        r_star+=1
+
+        print()
+```
+
+
 3) Find the number that appears once, and other numbers twice.
 
 [Leetcode](https://leetcode.com/problems/single-number/description/)
