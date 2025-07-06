@@ -103,12 +103,11 @@ Problems on Recurssion
 
 * Print name N times using recursion:
 ```
-def print_name(n,name):
-    if n == 1:
-        print(s)
-    else:
-        print("name")
-        print_name(n-1,name)
+def print_name(n, name):
+    if n == 0:
+        return
+    print_name(n - 1, name)  
+    print(name)              
 ```
 
 * 	Print 1 to N using recursion:
