@@ -410,7 +410,6 @@ def quick(arr):
     less = [x for x in arr[1:] if x <= pivot]
     greater = [x for x in arr[1:] if x > pivot]
     return quick_sort(less) + [pivot] + quick_sort(greater)
-
 ```
 
 ⏱️ Time and Space Complexity:
@@ -426,7 +425,6 @@ Code:
 def large(arr):
     arr.sort()
     return arr[len(arr)-1]
-
 ```
 
 11) Second Largest Element in an Array without sorting
