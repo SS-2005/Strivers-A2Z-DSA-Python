@@ -1792,7 +1792,30 @@ def findMin(self, nums):
                 
         # Loop ends when st == end, which is the index of the minimum
     return nums[st]
+```
 
+Extension of above problem:
+
+Find out how many times has an array been rotated
+
+Code:
+```
+class Solution:
+    def findKRoation(self, nums):
+        st, end = 0, len(nums) - 1
+
+        while st < end:
+            mid = (st + end) // 2
+
+            # If mid element is greater than end, the min is in right half
+            if nums[mid] > nums[end]:
+                st = mid + 1
+            else:
+                # Min could be at mid or in left half
+                end = mid
+
+        # Loop ends when st == end, which is the index of the minimum
+        return st
 ```
 
 28) Single element in a Sorted Array
@@ -1824,6 +1847,7 @@ Code:
 
 Code:
 ```
+class Solution(object):
     def findPeakElement(self, nums):
         left, right = 0, len(nums) - 1
 
