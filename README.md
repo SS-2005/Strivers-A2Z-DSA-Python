@@ -1928,6 +1928,56 @@ o([1, 2, 3, 5, 6], 4)
 ```
 ---
 
+32) Find square root of a number in log n
+
+Code:
+```
+def sq(n):
+    low,high=1,n
+    ans=1
+    while low<=high:
+        mid=(low+high)//2
+        if mid*mid <= n:
+            ans=max(ans,mid)
+            low=high+1
+        else:
+            high=mid-1
+    return ans
+```
+
+33) Find the Nth root of a number using binary search
+
+Code:
+```
+def val(root,num,n):
+    val=1
+    for i in range(root):
+        val*=num
+        if val>n:
+            return 2
+    if val==n:
+        return 1
+    
+    return 0
+
+def nroot(root,n):
+    low,high=1,n
+    while low<=high:
+        mid=(low+high)//2
+        if val(root,mid,n)== 1:
+            return mid
+        elif val(root,mid,n)==0:
+            low=mid+1
+        elif val(root,mid,n)==2:
+            high=mid-1
+    return -1
+```
+
+
+
+
+
+
 ### III) Hard Probles:
 
 1) Maximum Product Subarray
