@@ -1973,9 +1973,56 @@ def nroot(root,n):
     return -1
 ```
 
+34) Koko Eating Bananas
+
+[Leetcode link](https://leetcode.com/problems/koko-eating-bananas/description/)
+
+Code:
+```
+import math
+
+def eat(nums,hour):
+    total_hrs=0
+    for i in nums:
+        total_hrs+=math.ceil(i/hour)
+    return total_hrs
+
+def koko_eat(piles,h):
+    st=1
+    end=max(piles)
+    ans=end
+    while st<=end:
+        mid=(st+end)//2
+        if eat(piles,mid)<=h:
+            ans=min(mid,ans)
+            end=mid-1
+        elif eat(piles,mid)>h:
+            st=mid+1
+    return ans
+
+koko_eat(piles = [3,6,7,11], h = 8)
+4
+koko_eat(piles = [30,11,23,4,20], h = 5)
+30
+koko_eat(piles = [30,11,23,4,20], h = 6)
+23
 
 
+class Solution:
+    def minEatingSpeed(self, piles, h):
+        left, right = 1, max(piles)
 
+        while left < right:
+            k = (left + right) // 2
+            total_hours = sum((pile + k - 1) // k for pile in piles)
+
+            if total_hours > h:
+                left = k + 1  # Too slow
+            else:
+                right = k     # Try slower
+
+        return left
+```
 
 
 ### III) Hard Probles:
