@@ -2025,6 +2025,49 @@ class Solution:
 ```
 
 
+35) Minimum Number of Days to Make m Bouquets
+
+[Leetcode](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/)
+
+Code:
+```
+class Solution(object):
+    def minDays(self, bloomDay, m, k):
+        n = len(bloomDay)
+        if m * k > n:
+            return -1
+
+        left = min(bloomDay)
+        right = max(bloomDay)
+        result = -1
+
+        while left <= right:
+            mid = (left + right) // 2
+            if self.can_make_bouquets(bloomDay, m, k, mid):
+                result = mid
+                right = mid - 1
+            else:
+                left = mid + 1
+
+        return result
+
+    def can_make_bouquets(self, bloomDay, m, k, day):
+        bouquets = 0
+        flowers = 0
+
+        for bloom in bloomDay:
+            if bloom <= day:
+                flowers += 1
+                if flowers == k:
+                    bouquets += 1
+                    flowers = 0
+            else:
+                flowers = 0
+
+        return bouquets >= m
+```
+
+
 ### III) Hard Probles:
 
 1) Maximum Product Subarray
