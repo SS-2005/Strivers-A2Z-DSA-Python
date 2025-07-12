@@ -2068,6 +2068,33 @@ class Solution(object):
 ```
 
 
+36) Smallest Divisor Given a threshold
+
+[Leetcode](https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/)
+
+Code:
+```
+import math
+
+class Solution(object):
+    def smallestDivisor(self, nums, threshold):
+        def get_sum(divisor):
+            return sum((num + divisor - 1) // divisor for num in nums)  # same as math.ceil(num / divisor)
+
+        left, right = 1, max(nums)
+        answer = right
+
+        while left <= right:
+            mid = (left + right) // 2
+            if get_sum(mid) <= threshold:
+                answer = mid
+                right = mid - 1
+            else:
+                left = mid + 1
+
+        return answer
+```
+
 ### III) Hard Probles:
 
 1) Maximum Product Subarray
