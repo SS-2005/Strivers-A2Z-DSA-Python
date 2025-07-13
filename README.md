@@ -2095,6 +2095,39 @@ class Solution(object):
         return answer
 ```
 
+
+37) Capacity to shift N pacakages in D days
+
+[Leetcode](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/)
+
+Code:
+```
+class Solution(object):
+    def shipWithinDays(self, weights, days):
+        def can_ship_in_days(capacity):
+            current_weight = 0
+            required_days = 1
+            for w in weights:
+                if current_weight + w > capacity:
+                    required_days += 1
+                    current_weight = 0
+                current_weight += w
+            return required_days <= days
+        
+        left, right = max(weights), sum(weights)
+        result = right
+        
+        while left <= right:
+            mid = (left + right) // 2
+            if can_ship_in_days(mid):
+                result = mid
+                right = mid - 1
+            else:
+                left = mid + 1
+        
+        return result
+```
+
 ### III) Hard Probles:
 
 1) Maximum Product Subarray
