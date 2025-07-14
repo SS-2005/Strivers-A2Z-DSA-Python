@@ -12,6 +12,7 @@ I'm solving the Striver’s A2Z DSA Sheet using Python 🐍 — one day at a tim
 ## 🔗 Credits
 
 - 🧑‍💻 **LinkedIn:** [Take U Forword](https://www.linkedin.com/company/takeuforward/)
+
 - 📚 **Hosted on:** [Take U Forward](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/)
 
 ---
@@ -2293,7 +2294,7 @@ def symmetry(n: int):
         spaces += 2
 ```
 
-`Note : Will Update within 24 Hours`
+`Note : This will be updated within 24 Hours`
 
 ---
 ## 📌 License
