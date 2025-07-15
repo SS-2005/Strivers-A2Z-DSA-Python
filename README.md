@@ -1,6 +1,7 @@
 # Strivers-A2Z-DSA-Python
 
 ---
+
 ## Introduction:
 
 🚀 My journey through Striver’s A2Z DSA Sheet using Python | Personal solutions, logic-first approach (No AI used)
@@ -16,6 +17,7 @@ I'm solving the Striver’s A2Z DSA Sheet using Python 🐍 — one day at a tim
 - 📚 **Hosted on:** [Take U Forward](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/)
 
 ---
+
 ## Problems :
 
 `Pre-requisite: Basic Python understanding`
