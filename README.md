@@ -2296,7 +2296,7 @@ def symmetry(n: int):
         spaces += 2
 ```
 
-`Note : This will be updated within 24 Hours`
+`Note : Will update with 24 hours`
 
 ---
 ## 📌 License
