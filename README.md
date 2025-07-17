@@ -14,13 +14,14 @@ I'm solving the Striver’s A2Z DSA Sheet using Python 🐍 — one day at a tim
 
 - 🧑‍💻 **LinkedIn:** [Take U Forword](https://www.linkedin.com/company/takeuforward/)
 
+
 - 📚 **Hosted on:** [Take U Forward](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/)
 
 ---
 
 ## Problems :
 
-`Pre-requisite: Basic Python understanding`
+`Pre-requisite: Basic Python understanding, OOP's and Programming methodology`
 
 ### I) Easy Problems:
 
