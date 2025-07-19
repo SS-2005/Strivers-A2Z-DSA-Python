@@ -2136,6 +2136,29 @@ class Solution(object):
         return result
 ```
 
+38) Kth Missing Positive Number
+
+[LeetCode](https://leetcode.com/problems/kth-missing-positive-number/description/)
+
+Code:
+```
+class Solution(object):
+    def findKthPositive(self, arr, k):
+        """
+        :type arr: List[int]
+        :type k: int
+        :rtype: int
+        """
+        missing = []
+        i = 1
+        arr_set = set(arr)  # Faster lookup
+        while len(missing) < k:
+            if i not in arr_set:
+                missing.append(i)
+            i += 1
+        return missing[-1]
+```
+
 ### III) Hard Probles:
 
 1) Maximum Product Subarray
