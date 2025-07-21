@@ -2082,6 +2082,7 @@ class Solution(object):
 [Leetcode](https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/)
 
 Code:
+
 ```
 import math
 
@@ -2267,6 +2268,7 @@ def getNumberPattern(n: int) -> None:
 [Link](https://www.naukri.com/code360/problems/ninja-and-the-star-pattern-i_6581920?utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_patternproblems)
 
 Code:
+
 ```
 def getStarPattern(n: int) -> None:
     # Write your solution here.
@@ -2365,6 +2367,6 @@ class Solution:
 ---
 ## 📌 License
 
-fell free to use, modify, and share with attribution.
+Fell free to use, modify, and share with attribution.
 
 Connect with me on my [LinkedIn](www.linkedin.com/in/sahilshaikh110205)
