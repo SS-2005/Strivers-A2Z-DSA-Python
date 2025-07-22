@@ -2362,6 +2362,44 @@ class Solution:
                 low = i + 1
 ```
 
+8) Split array - Largest Sum
+
+[LeetCode](https://leetcode.com/problems/split-array-largest-sum/)
+
+Code:
+```
+class Solution(object):
+    def FindStd(self,nums,pages):
+        std,pgStd=1,0
+        for i in range(len(nums)):
+            if pgStd+nums[i]<=pages:
+                pgStd+=nums[i]
+            else:
+                std+=1
+                pgStd=nums[i]
+                
+        return std
+
+    def splitArray(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        if k>len(nums):
+            return -1
+
+        low,high=max(nums),sum(nums)
+        while(low<=high):
+            mid=(low+high)//2
+            numStd=self.FindStd(nums,mid)
+            if numStd>k:
+                low=mid+1
+            else:
+                high=mid-1
+        return low
+```
+
 `Note : Will update within 24 hours`
 
 ---
