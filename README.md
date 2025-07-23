@@ -2400,6 +2400,43 @@ class Solution(object):
         return low
 ```
 
+9) Minimize Max Distance to Gas Station
+
+[Link](https://takeuforward.org/plus/dsa/problems/minimise-max-distance-to-gas-stations)
+
+Code:
+```
+import math
+
+class Solution:
+    def minimiseMaxDistance(self, arr, k):
+        n = len(arr)
+        
+        # Helper function to check if a given distance d is possible
+        def can_place(d):
+            count = 0
+            for i in range(n - 1):
+                gap = arr[i + 1] - arr[i]
+                # Number of stations needed for this gap
+                count += math.floor(gap / d)
+                if gap % d == 0:
+                    count -= 1  # adjust for exact split
+            return count <= k
+        
+        # Binary search
+        left, right = 0, arr[-1] - arr[0]  # smallest and largest possible distances
+        precision = 1e-6  # precision up to 5 decimal places
+        
+        while right - left > precision:
+            mid = (left + right) / 2
+            if can_place(mid):
+                right = mid
+            else:
+                left = mid
+                
+        return round(right, 5)
+```
+
 `Note : Will update within 24 hours`
 
 ---
