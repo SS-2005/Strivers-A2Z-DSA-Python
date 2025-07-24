@@ -2437,6 +2437,42 @@ class Solution:
         return round(right, 5)
 ```
 
+10) Median of Two Sorted Arrays
+
+[Leetcode](https://leetcode.com/problems/median-of-two-sorted-arrays/description/)
+
+Code:
+```
+class Solution:
+    def findMedianSortedArrays(self, nums1, nums2):
+        n1, n2 = len(nums1), len(nums2)
+        n = n1 + n2
+        ind1, ind2 = n // 2 - 1, n // 2
+
+        i = j = cnt = 0
+        elem1 = elem2 = 0
+
+        while cnt <= ind2:
+            if i < n1 and (j >= n2 or nums1[i] <= nums2[j]):
+                val = nums1[i]
+                i += 1
+            else:
+                val = nums2[j]
+                j += 1
+
+            if cnt == ind1:
+                elem1 = val
+            if cnt == ind2:
+                elem2 = val
+            cnt += 1
+
+        if n % 2 == 0:
+            return (elem1 + elem2) / 2.0
+        else:
+            return elem2 * 1.0
+
+```
+
 `Note : Will update within 24 hours`
 
 ---
