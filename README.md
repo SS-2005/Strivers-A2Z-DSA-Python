@@ -669,7 +669,7 @@ class Solution(object):
         return st
 ```
 
-26) Floor/Ceil in Sorted Array
+26) Floor/Ceil in Given Sorted Array
 
 Code:
 ```
