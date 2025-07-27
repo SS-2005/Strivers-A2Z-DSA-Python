@@ -2474,6 +2474,57 @@ class Solution:
 
 ```
 
+11) Aggressive Cows
+
+[Link](https://takeuforward.org/plus/dsa/problems/aggressive-cows)
+
+Helper Function Code:
+```
+class Solution:
+    def can_place(self,Nums,dist,cows):
+        cow=1
+        prev=Nums[0]
+        for i in range(1,len(Nums)):
+            if Nums[i]-prev >= dist:
+                cow+=1
+                prev=Nums[i]
+            if cow>=cows:
+                return True
+        return False
+```
+
+Brute Force Solution Code:
+```
+def place(Nums,K):
+    Nums.sort()
+    low,high=Nums[0],Nums[len(Nums)-1]
+    if K==2:
+        return high-low
+    for i in range(1,high-low+1):
+        if can_place(Nums,i,K):
+            continue
+        else:
+            return i-1
+```
+
+Optimal Solution(BS):
+```
+class Solution:
+    def aggressiveCows(self, nums, k):
+        Nums.sort()
+        st,end=Nums[0],Nums[len(Nums)-1]
+        if K==2:
+            return end-st
+        low,high=1,end-st
+        while low<=high:
+            mid=(low+high)//2
+            if self.can_place(Nums,mid,K):
+                low=mid+1
+            else:
+                high=mid-1
+        return high
+```
+
 `Note : Will update within 24 hours`
 
 ---
