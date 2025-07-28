@@ -2039,42 +2039,55 @@ class Solution:
 
 [Leetcode](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/)
 
-Code:
+Helper Function Code:
+```
+#helper function
+def can_make(self,nums,m,k,day):
+    counter=0
+    made=0
+    for num in nums:
+        if num <= day:
+            counter+=1
+            if counter >= k:
+                made+=1
+                counter=0
+        else:
+            counter=0
+        return made>=m
+
+```
+
+Brute Force Solution:
+```
+#Linear Search Technique (Brute Force)
+    def place(Nums,K):
+        Nums.sort()
+        low,high=Nums[0],Nums[len(Nums)-1]
+        if K==2:
+            return high-low
+        for i in range(1,high-low+1):
+            if can_place(Nums,i,K):
+                continue
+            else:
+                return i-1
+```
+
+Code (BS):
 ```
 class Solution(object):
+    #binary search
     def minDays(self, bloomDay, m, k):
-        n = len(bloomDay)
-        if m * k > n:
+        if m*k > len(bloomDay):
             return -1
-
-        left = min(bloomDay)
-        right = max(bloomDay)
-        result = -1
-
-        while left <= right:
-            mid = (left + right) // 2
-            if self.can_make_bouquets(bloomDay, m, k, mid):
-                result = mid
-                right = mid - 1
+        low=min(bloomDay)
+        high=max(bloomDay)
+        while low<=high:
+            mid=(low+high)//2
+            if self.can_make(bloomDay,m,k,mid):
+                high=mid-1
             else:
-                left = mid + 1
-
-        return result
-
-    def can_make_bouquets(self, bloomDay, m, k, day):
-        bouquets = 0
-        flowers = 0
-
-        for bloom in bloomDay:
-            if bloom <= day:
-                flowers += 1
-                if flowers == k:
-                    bouquets += 1
-                    flowers = 0
-            else:
-                flowers = 0
-
-        return bouquets >= m
+                low=mid+1
+        return low
 ```
 
 
