@@ -2136,28 +2136,33 @@ Code:
 ```
 class Solution(object):
     def shipWithinDays(self, weights, days):
-        def can_ship_in_days(capacity):
-            current_weight = 0
-            required_days = 1
-            for w in weights:
-                if current_weight + w > capacity:
-                    required_days += 1
-                    current_weight = 0
-                current_weight += w
-            return required_days <= days
+        def ship_day(wt, cap):
+            day, load = 1, 0
+            for w in wt:
+                if load + w > cap:
+                    day += 1
+                    load = w
+                else:
+                    load += w
+            return day
+
+        low = max(weights)
+        high = sum(weights)
         
-        left, right = max(weights), sum(weights)
-        result = right
-        
-        while left <= right:
-            mid = (left + right) // 2
-            if can_ship_in_days(mid):
-                result = mid
-                right = mid - 1
+        while low < high:
+            mid = (low + high) // 2
+            if ship_day(weights, mid) <= days:
+                high = mid
             else:
-                left = mid + 1
-        
-        return result
+                low = mid + 1
+        return low
+
+    #linear search
+    def ls(wt,days):
+        for i in range(max(wt),sum(wt)):
+            if ship_day(wt,i)==days:
+                return i
+        return -1
 ```
 
 38) Kth Missing Positive Number
