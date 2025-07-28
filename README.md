@@ -2098,25 +2098,33 @@ class Solution(object):
 Code:
 
 ```
-import math
+    #helper function
+    def poss(arr,div,th):
+        import math
+        c_th=0
+        for num in arr:
+            c_th+=math.ceil(num/div)
+        return c_th<=th
 
-class Solution(object):
-    def smallestDivisor(self, nums, threshold):
-        def get_sum(divisor):
-            return sum((num + divisor - 1) // divisor for num in nums)  # same as math.ceil(num / divisor)
+    #Brute Force
+    def ls(arr,th):
+        mini=max(arr)
+        for i in range(min(arr),max(arr)):
+            if poss(arr,i,th):
+                mini=min(mini,i)
+        return mini
 
-        left, right = 1, max(nums)
-        answer = right
-
-        while left <= right:
-            mid = (left + right) // 2
-            if get_sum(mid) <= threshold:
-                answer = mid
-                right = mid - 1
+    #binary search
+    def bs(arr,th):
+        low=min(arr)
+        high=max(arr)
+        while low<=high:
+            mid=(low+high)//2
+            if poss(arr,mid,th):
+                high=mid-1
             else:
-                left = mid + 1
-
-        return answer
+                low=mid+1
+        return low
 ```
 
 
