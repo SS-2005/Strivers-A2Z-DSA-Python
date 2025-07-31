@@ -2225,6 +2225,43 @@ class Solution(object):
         return missing[-1]
 ```
 
+39) Search a 2D Matrix II
+
+[Leetcode](https://leetcode.com/problems/search-a-2d-matrix-ii/description/)
+
+Code:
+```
+class Solution(object):
+    def searchMatrix(self, matrix, target):
+        """
+        :type matrix: List[List[int]]
+        :type target: int
+        :rtype: bool
+        """
+        if not matrix or not matrix[0]:
+            return False
+        
+        rows = len(matrix)
+        cols = len(matrix[0])
+        
+        # Start from the top-right corner
+        row = 0
+        col = cols - 1
+        
+        while row < rows and col >= 0:
+            current = matrix[row][col]
+            if current == target:
+                return True
+            elif current > target:
+                col -= 1  # move left
+            else:
+                row += 1  # move down
+        
+        return False
+
+```
+
+
 ### III) Hard Probles:
 
 1) Maximum Product Subarray
