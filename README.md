@@ -2261,6 +2261,44 @@ class Solution(object):
 
 ```
 
+40) Find Peak Element (2D Matrix)
+
+[Link](https://leetcode.com/problems/find-a-peak-element-ii/description/)
+
+Code:
+```
+class Solution(object):
+    def findPeakGrid(self, mat):
+        """
+        :type mat: List[List[int]]
+        :rtype: List[int]
+        """
+        m, n = len(mat), len(mat[0])
+        left, right = 0, n - 1
+
+        while left <= right:
+            mid_col = (left + right) // 2
+
+            # Find the row with the max element in mid_col
+            max_row = 0
+            for i in range(m):
+                if mat[i][mid_col] > mat[max_row][mid_col]:
+                    max_row = i
+
+            # Get left and right neighbors safely
+            left_val = mat[max_row][mid_col - 1] if mid_col - 1 >= 0 else -1
+            right_val = mat[max_row][mid_col + 1] if mid_col + 1 < n else -1
+            current = mat[max_row][mid_col]
+
+            if current > left_val and current > right_val:
+                return [max_row, mid_col]
+            elif left_val > current:
+                right = mid_col - 1
+            else:
+                left = mid_col + 1
+
+```
+
 
 ### III) Hard Probles:
 
