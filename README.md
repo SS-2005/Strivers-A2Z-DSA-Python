@@ -747,6 +747,7 @@ class Solution(object):
             t=s[len(s):0:-1]
             rev=int(t)
             f=-rev
+        # in specific range or not
         if f > 2**31 - 1 or f < -2**31:
             return 0
         return f
