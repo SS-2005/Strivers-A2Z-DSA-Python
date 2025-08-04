@@ -1182,7 +1182,7 @@ def getNumberPattern(n: int) -> None:
         for j in range(size):
             value=n-min(i,j,size-1-i,size-1-j)
             print(value,end="")
-        print()
+        print() #next line
 ```
 
 -
