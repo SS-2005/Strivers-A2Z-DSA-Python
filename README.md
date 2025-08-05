@@ -790,6 +790,33 @@ def rowWithMax1s(matrix, n, m):
     return index
 ```
 
+
+30) Remove outermost Paranthesis
+
+[Leetcode](https://leetcode.com/problems/remove-outermost-parentheses/)
+
+Code:
+```
+class Solution(object):
+    def removeOuterParentheses(self, s):
+        result = []
+        balance = 0
+
+        for char in s:
+            if char == '(':
+                if balance > 0:
+                    result.append(char)
+                balance += 1
+            else:  
+                balance -= 1
+                if balance > 0:
+                    result.append(char)
+
+        return ''.join(result)
+
+```
+
+
 <br>
 
 ---
