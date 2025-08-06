@@ -2327,6 +2327,29 @@ class Solution(object):
 
 ```
 
+41) Reverse Words in a String
+
+[leetcode](https://leetcode.com/problems/reverse-words-in-a-string/)
+
+Code:
+```
+class Solution(object):
+    def reverseWords(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        words = s.split()
+        # Step 2: Reverse the list of words
+        reversed_words = words[::-1]
+        # Step 3: Join the reversed list into a single string with a space
+        result = ' '.join(reversed_words)
+        return result
+        
+```
+
+
+
 
 ### III) Hard Probles:
 
