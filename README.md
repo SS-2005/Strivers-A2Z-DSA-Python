@@ -835,6 +835,33 @@ class Solution(object):
 
 ```
 
+32) Longest Common Prefix
+
+[leetcode](https://leetcode.com/problems/longest-common-prefix/description/)
+
+Code:
+```
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        if not strs:  # agar list empty hai
+            return ""
+        
+        prefix = strs[0]  # pehle string ko prefix maan lo
+        
+        for s in strs[1:]:
+            # Jab tak current string prefix se start nahi hota, prefix ko chhota karo
+            while not s.startswith(prefix):
+                prefix = prefix[:-1]
+                if not prefix:
+                    return ""
+        
+        return prefix
+
+```
 
 
 <br>
