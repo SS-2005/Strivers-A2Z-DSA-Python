@@ -2396,6 +2396,38 @@ class Solution(object):
 ```
 
 
+42) Isomorphic Strings
+
+[Leetcode](https://leetcode.com/problems/isomorphic-strings/description/)
+
+Code:
+```
+def isIsomorphic(s: str, t: str) -> bool:
+    if len(s) != len(t):
+        return False
+
+    map_s_t = {}
+    map_t_s = {}
+
+    for ch_s, ch_t in zip(s, t):
+        # Check mapping from s to t
+        if ch_s in map_s_t:
+            if map_s_t[ch_s] != ch_t:
+                return False
+        else:
+            map_s_t[ch_s] = ch_t
+
+        # Check mapping from t to s
+        if ch_t in map_t_s:
+            if map_t_s[ch_t] != ch_s:
+                return False
+        else:
+            map_t_s[ch_t] = ch_s
+
+    return True
+```
+
+
 
 
 ### III) Hard Probles:
