@@ -2427,8 +2427,30 @@ def isIsomorphic(s: str, t: str) -> bool:
     return True
 ```
 
+43) Valid Anagram
 
+[leetcode](https://leetcode.com/problems/valid-anagram/description/)
 
+Code:
+```
+class Solution(object):
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        if len(s) != len(t):
+            return False
+        
+        count = [0] * 26  # 26 lowercase letters
+        
+        for ch1, ch2 in zip(s, t):
+            count[ord(ch1) - ord('a')] += 1
+            count[ord(ch2) - ord('a')] -= 1
+        
+        return all(c == 0 for c in count)
+```
 
 ### III) Hard Probles:
 
