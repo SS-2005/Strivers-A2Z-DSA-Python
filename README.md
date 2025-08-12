@@ -2452,6 +2452,39 @@ class Solution(object):
         return all(c == 0 for c in count)
 ```
 
+
+44) Sort Characters By Frequency
+
+[leetcode](https://leetcode.com/problems/sort-characters-by-frequency/description/)
+
+Code:
+```
+class Solution(object):
+    def frequencySort(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        # Step 1: Count frequency of each character
+        freq_map = {}
+        for char in s:
+            freq_map[char] = freq_map.get(char, 0) + 1
+        
+        # Step 2: Sort characters based on frequency (descending)
+        # sorted returns list of tuples (char, frequency)
+        sorted_chars = sorted(freq_map.items(), key=lambda x: x[1], reverse=True)
+        
+        # Step 3: Build result string
+        result = []
+        for char, freq in sorted_chars:
+            result.append(char * freq)  # repeat char 'freq' times
+        
+        return "".join(result)
+
+```
+
+
+
 ### III) Hard Probles:
 
 1) Maximum Product Subarray
