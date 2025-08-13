@@ -2483,6 +2483,31 @@ class Solution(object):
 
 ```
 
+45) Maximum Nesting Depth of Paranthesis
+
+[Leetcode](https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/description/)
+
+Code:
+```
+class Solution(object):
+    def maxDepth(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        current_depth = 0
+        max_depth = 0
+        
+        for char in s:
+            if char == '(':
+                current_depth += 1
+                max_depth = max(max_depth, current_depth)
+            elif char == ')':
+                current_depth -= 1
+        
+        return max_depth
+
+```
 
 
 ### III) Hard Probles:
