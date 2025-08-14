@@ -2510,6 +2510,33 @@ class Solution(object):
 ```
 
 
+46) Roman to Integer
+
+[leetcode](https://leetcode.com/problems/roman-to-integer/description/)
+
+Code:
+```
+class Solution(object):
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        values = {
+            'I': 1, 'V': 5, 'X': 10, 'L': 50,
+            'C': 100, 'D': 500, 'M': 1000
+        }
+        total = 0
+        for i in range(len(s)):
+            # If current value is less than next value → subtract
+            if i + 1 < len(s) and values[s[i]] < values[s[i + 1]]:
+                total -= values[s[i]]
+            else:
+                total += values[s[i]]
+        return total
+```
+
+
 ### III) Hard Probles:
 
 1) Maximum Product Subarray
