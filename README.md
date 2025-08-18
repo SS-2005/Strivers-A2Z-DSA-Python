@@ -2374,7 +2374,7 @@ class Solution(object):
 
 ```
 
-41) Reverse Words in a String
+41) Reverse Words in a String.
 
 [leetcode](https://leetcode.com/problems/reverse-words-in-a-string/)
 
