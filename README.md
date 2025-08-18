@@ -436,7 +436,7 @@ def large(arr):
     return arr[len(arr)-1]
 ```
 
-11) Second Largest Element in an Array without sorting
+11) Second Largest Element in an Array without sorting.
 
 Code:
 ```
