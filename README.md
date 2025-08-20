@@ -12,7 +12,7 @@ This repository contains my personal solutions to the [Striver’s A2Z DSA Sheet
 <br>
 I'm solving the Striver’s A2Z DSA Sheet using Python 🐍 — one day at a time. All solutions are written with my own logic, no ChatGPT or AI tools. 
 
-This repo is to track my consistency and help others looking for clean, beginner-friendly Python DSA implementations.
+This repo is to track my consistency and help others looking for clean, beginner-friendly Python DSA implementations
 
 ---
 ## 🔗 Credits
