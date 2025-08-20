@@ -791,7 +791,7 @@ def rowWithMax1s(matrix, n, m):
 ```
 
 
-30) Remove outermost Paranthesis
+30) Remove outermost Paranthesis.
 
 [Leetcode](https://leetcode.com/problems/remove-outermost-parentheses/)
 
