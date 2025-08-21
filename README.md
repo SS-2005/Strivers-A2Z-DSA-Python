@@ -1650,7 +1650,7 @@ class Solution:
         return res
 ```
 
-19) 4-Sum Problem
+19) 4-Sum Problem.
 
 [Leetcode](https://leetcode.com/problems/4sum/description/)
 
