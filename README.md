@@ -504,7 +504,7 @@ class Solution:
         nums[:]=nums
 ```
 
-16) Linear Search
+16) Linear Search.
 
 Code:
 ```
