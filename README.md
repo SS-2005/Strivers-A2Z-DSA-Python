@@ -26,7 +26,7 @@ This repo is to track my consistency and help others looking for clean, beginner
 
 ## Problems :
 
-`Pre-requisite: Basic Python understanding, OOP's and Programming methodology`
+`Pre-requisite: Basic Python understanding, OOP's and Programming methodology.`
 
 ### I) Easy Problems:
 
