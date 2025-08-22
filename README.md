@@ -83,7 +83,7 @@ def armstrong(n):
         return False
 ```
 
-4) Print all Divisors.
+4) Print all Divisors
 
 ```
 def div(n):
