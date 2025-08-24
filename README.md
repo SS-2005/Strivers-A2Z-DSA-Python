@@ -313,7 +313,7 @@ Bubble Sort is a simple comparison-based sorting algorithm. It works by repeated
 ❌ Disadvantages:
 
  * Very slow for large datasets
- * Inefficient compared to other O(n²) sorts like insertion sort
+ * Inefficient compared to other O(n²) sorts like insertion sort.
 
 Code:
 ```
