@@ -1261,7 +1261,7 @@ def getNumberPattern(n: int) -> None:
 
 -
 
-3) Find the number that appears once, and other numbers twice.
+3) Find the number that appears once, and other numbers twice
 
 [Leetcode](https://leetcode.com/problems/single-number/description/)
 
