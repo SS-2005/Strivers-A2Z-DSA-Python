@@ -457,7 +457,7 @@ def IsSorted(arr):
     return arr==sorted(arr)
 ```
 
-13) Remove duplicates from Sorted array
+13) Remove duplicates from Sorted array.
 
 Code:
 ```
