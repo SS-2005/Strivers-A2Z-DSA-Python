@@ -191,7 +191,7 @@ def f(n):
   
 Selection Sort is a simple comparison-based sorting algorithm. It divides the list into two parts:
 
-  * The sorted part at the beginning
+  * The sorted part at the beginning.
 
   * The unsorted part at the end
 
