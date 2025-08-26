@@ -341,7 +341,7 @@ def bub(arr):
 #### **Merge sort:**
   
 🔹 Introduction:
-Merge Sort is a divide-and-conquer algorithm. It divides the array into halves, recursively sorts them, and then merges the sorted halves to produce the final sorted array.
+Merge Sort is a divide-and-conquer algorithm. It divides the array into halves, recursively sorts them, and then merges the sorted halves to produce the final sorted array
 
 ✅ Advantages:
 
