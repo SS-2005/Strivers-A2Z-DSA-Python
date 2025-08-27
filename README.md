@@ -406,7 +406,7 @@ Quick Sort is a divide-and-conquer algorithm. It picks a pivot element, partitio
 
 ❌ Disadvantages:
 
- * Not stable by default
+ * Not stable by default.
  * Worst-case performance is O(n²)
  * Recursive; risk of stack overflow on large arrays (without optimization)
 
