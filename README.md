@@ -280,7 +280,7 @@ def ins(arr):
 🧠 Adaptive Nature:✅ Adaptive
 (Performs better if the input is already or nearly sorted)
 
-✅ Advantages
+✅ Advantages.
 
  * Very simple and intuitive
     
@@ -292,7 +292,7 @@ def ins(arr):
     
  * Works well when insertion cost is low
 
-❌ Disadvantages
+❌ Disadvantages.
 
  * Inefficient for large datasets
  * O(n²) time complexity in worst case
