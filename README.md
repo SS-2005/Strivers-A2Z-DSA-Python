@@ -449,7 +449,7 @@ def SL(arr):
     return max2
 ```
 
-12) Check if the array is sorted
+12) Check if the array is sorted.
 
 Code:
 ```
