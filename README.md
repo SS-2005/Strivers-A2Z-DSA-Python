@@ -270,7 +270,7 @@ def ins(arr):
 | Average         | \~n²/4      | \~n²/4   | O(n²) |
 | Worst (reverse) | n(n-1)/2    | n(n-1)/2 | O(n²) |
 
-🧮 Space Complexity
+🧮 Space Complexity: 
  * O(1) auxiliary space
     (In-place sorting, no extra arrays used)
 
