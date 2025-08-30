@@ -2461,26 +2461,17 @@ Code:
 ```
 class Solution(object):
     def frequencySort(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
-        # Step 1: Count frequency of each character
-        freq_map = {}
-        for char in s:
-            freq_map[char] = freq_map.get(char, 0) + 1
-        
-        # Step 2: Sort characters based on frequency (descending)
-        # sorted returns list of tuples (char, frequency)
-        sorted_chars = sorted(freq_map.items(), key=lambda x: x[1], reverse=True)
-        
-        # Step 3: Build result string
-        result = []
-        for char, freq in sorted_chars:
-            result.append(char * freq)  # repeat char 'freq' times
-        
-        return "".join(result)
-
+        dic={}
+        for c in s:
+            if c in dic:
+                dic[c]+=1
+            else:
+                dic[c]=1
+        sort=sorted(dic,key=dic.get,reverse=True)
+        result=[c*dic[c] for c in sort]
+        res = ''.join(result)
+        return res
+            
 ```
 
 45) Maximum Nesting Depth of Paranthesis
