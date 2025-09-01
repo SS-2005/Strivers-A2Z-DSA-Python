@@ -3060,17 +3060,41 @@ class Solution(object):
         # Final average
         return total_avg(classes)
 
+#optimal solution
+import heapq
 
+class Solution(object):
+    def maxAverageRatio(self, classes, extraStudents):
+        """
+        :type classes: List[List[int]]
+        :type extraStudents: int
+        :rtype: float
+        """
+        def gain(p, t):
+            # Improvement in ratio if we add one student
+            return (p + 1) / float(t + 1) - (p / float(t))
+
+        # Build a max-heap (store negative gain because heapq is min-heap)
+        heap = []
+        for p, t in classes:
+            heapq.heappush(heap, (-gain(p, t), p, t))
+
+        # Assign extra students
+        for _ in range(extraStudents):
+            g, p, t = heapq.heappop(heap)
+            p += 1
+            t += 1
+            heapq.heappush(heap, (-gain(p, t), p, t))
+
+        # Compute final average
+        total = 0.0
+        while heap:
+            _, p, t = heapq.heappop(heap)
+            total += p / float(t)
+
+        return total / len(classes)
 
 ```
-
-
-
-
-
-
-
-
 
 `Note : Will update within 24 hours`
 
