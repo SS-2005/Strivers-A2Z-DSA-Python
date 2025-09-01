@@ -3017,6 +3017,61 @@ class Solution:
         return high
 ```
 
+12) Maximum Average Pass Ratio
+
+[leetcode link](https://leetcode.com/problems/maximum-average-pass-ratio/description/?)
+
+Code:
+```
+#Brute Forse
+class Solution(object):
+    def maxAverageRatio(self, classes, extraStudents):
+        """
+        :type classes: List[List[int]]
+        :type extraStudents: int
+        :rtype: float
+        """
+        def Avg(cl):
+            return cl[0] / float(cl[1])
+
+        def total_avg(classes):
+            ans = 0.0
+            for c in classes:
+                ans += Avg(c)
+            return ans / len(classes)
+
+        # Assign extra students one by one
+        for _ in range(extraStudents):
+            best_gain = -1
+            best_idx = -1
+
+            for i, c in enumerate(classes):
+                curr = Avg(c)
+                new = (c[0] + 1) / float(c[1] + 1)
+                gain = new - curr
+                if gain > best_gain:
+                    best_gain = gain
+                    best_idx = i
+
+            # Assign this student to the best class
+            classes[best_idx][0] += 1
+            classes[best_idx][1] += 1
+
+        # Final average
+        return total_avg(classes)
+
+
+
+```
+
+
+
+
+
+
+
+
+
 `Note : Will update within 24 hours`
 
 ---
