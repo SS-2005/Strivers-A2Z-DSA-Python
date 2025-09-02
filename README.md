@@ -5,7 +5,7 @@
 ## Introduction:
 
 
-🚀 My journey through Striver’s A2Z DSA Sheet using Python | Personal solutions, logic-first approach (No AI used).
+🚀 My journey through Striver’s A2Z DSA Sheet using Python | Personal solutions, logic-first approach.
 
 This repository contains my personal solutions to the [Striver’s A2Z DSA Sheet](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/) using Python 🐍.
 
