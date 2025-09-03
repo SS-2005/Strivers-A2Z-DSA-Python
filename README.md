@@ -280,7 +280,7 @@ def ins(arr):
 🧠 Adaptive Nature:✅ Adaptive
 (Performs better if the input is already or nearly sorted)
 
-✅ Advantages.
+✅ Advantages:
 
  * Very simple and intuitive
     
