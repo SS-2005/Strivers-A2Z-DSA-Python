@@ -94,7 +94,7 @@ def div(n):
     return d
 ```
 
-5) Check for Prime.
+5) Check for Prime:
 
 ```
 def IsPrime(n):
