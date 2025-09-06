@@ -28,7 +28,7 @@ This repo is to track my consistency and help others looking for clean, beginner
 
 `Pre-requisite: Basic Python understanding, OOP's and Programming methodology.`
 
-### I) Easy Problems:
+### I) Easy Problems :
 
 1) Check Palindrome
 
