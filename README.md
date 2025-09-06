@@ -2691,7 +2691,7 @@ class Solution(object):
         return count
 ```
 
-51) Delete Node from Linked-List
+51) Delete Node from Linked-List :
 
 [leetcode](https://leetcode.com/problems/delete-node-in-a-linked-list/)
 
