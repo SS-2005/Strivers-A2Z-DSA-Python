@@ -159,7 +159,7 @@ def factR(n):
     return s
 ```
 
-7) Reverse an Array In-Place:
+7) Reverse an Array In-Place
 ```
 def reva(arr,n):
     i=0
