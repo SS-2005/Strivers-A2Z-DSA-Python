@@ -2716,6 +2716,72 @@ class Solution(object):
 
 ```
 
+52) Insertion in a linked-list
+
+Code:
+```
+# Node class
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+# Linked List class
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    # Insert at the beginning
+    def insert_at_beginning(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
+    # Insert at the end
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.head is None:   # if list is empty
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next:   # traverse till last node
+            temp = temp.next
+        temp.next = new_node
+
+    # Insert after a given node
+    def insert_after(self, prev_node, data):
+        if prev_node is None:
+            print("Previous node cannot be None")
+            return
+        new_node = Node(data)
+        new_node.next = prev_node.next
+        prev_node.next = new_node
+
+    # Print the linked list
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("None")
+
+
+# Example usage
+ll = LinkedList()
+ll.insert_at_end(10)
+ll.insert_at_end(20)
+ll.insert_at_end(30)
+ll.display()   # 10 -> 20 -> 30 -> None
+
+ll.insert_at_beginning(5)
+ll.display()   # 5 -> 10 -> 20 -> 30 -> None
+
+ll.insert_after(ll.head.next, 15)  # Insert 15 after 10
+ll.display()   # 5 -> 10 -> 15 -> 20 -> 30 -> None
+
+```
+
 
 
 ### III) Hard Probles:
