@@ -2782,6 +2782,66 @@ ll.display()   # 5 -> 10 -> 15 -> 20 -> 30 -> None
 
 ```
 
+53) Search in Linked List
+
+Code:
+```
+# Node class
+class Node:
+    def __init__(self, data):
+        self.data = data  # store data
+        self.next = None  # pointer to next node
+
+
+# Singly Linked List class
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    # Insert a new node at the end
+    def insert(self, data):
+        new_node = Node(data)
+        if self.head is None:  # empty list
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next:  # traverse to the end
+            temp = temp.next
+        temp.next = new_node
+
+    # Search for a value in the linked list
+    def search(self, key):
+        temp = self.head
+        pos = 0
+        while temp:
+            if temp.data == key:
+                return f"Element {key} found at position {pos}"
+            temp = temp.next
+            pos += 1
+        return f"Element {key} not found in the list"
+
+    # Display the linked list
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("None")
+
+
+# Example usage
+ll = LinkedList()
+ll.insert(10)
+ll.insert(20)
+ll.insert(30)
+ll.insert(40)
+
+ll.display()
+
+print(ll.search(30))  # Found
+print(ll.search(50))  # Not found
+
+```
 
 
 ### III) Hard Probles:
