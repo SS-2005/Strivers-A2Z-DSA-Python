@@ -2843,6 +2843,65 @@ print(ll.search(50))  # Not found
 
 ```
 
+54) Linked List Transversal
+
+Code:
+```
+# Node class
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+# Linked List class
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    # Insert at the end
+    def insert(self, data):
+        new_node = Node(data)
+        if self.head is None:   # If list is empty
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next:       # Traverse till last node
+            temp = temp.next
+        temp.next = new_node
+
+    # Traverse and display
+    def traverse(self):
+        if self.head is None:
+            print("Linked List is empty")
+            return
+        temp = self.head
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("None")
+
+    # Get length of linked list
+    def length(self):
+        count = 0
+        temp = self.head
+        while temp:
+            count += 1
+            temp = temp.next
+        return count
+
+
+# Example usage
+ll = LinkedList()
+ll.insert(10)
+ll.insert(20)
+ll.insert(30)
+
+print("Linked List elements:")
+ll.traverse()
+
+print("Length of Linked List:", ll.length())
+
+```
 
 ### III) Hard Probles:
 
