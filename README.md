@@ -184,7 +184,7 @@ def f(n):
         return f(n-1)+f(n-2)
 ```
 
-#### 9)Sorting Techniques:
+#### 9)Sorting Techniques
 <br>
 
 #### **Selection Sort** :
