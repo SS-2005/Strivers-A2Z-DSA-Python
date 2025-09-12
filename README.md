@@ -172,7 +172,7 @@ def reva(arr,n):
 
 ```
 
-8) Sum of Fibonacci Number Series.
+8) Sum of Fibonacci Number Series:
 [leetcode](https://leetcode.com/problems/fibonacci-number/description/)
 ```
 def f(n):
