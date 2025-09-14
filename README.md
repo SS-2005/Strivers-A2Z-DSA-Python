@@ -218,7 +218,7 @@ def sel(arr):
 
 🧮 Space Complexity:
 
-* O(1) (in-place sorting, only swaps elements)
+* O(1) (in-place sorting, only swaps elements).
 
 ✅ Pros:
 
