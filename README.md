@@ -106,7 +106,7 @@ def IsPrime(n):
 ```
 6) Recurssion:
 
-A function which calls it self until a base condition is satiesfied is known as `Reccursion`. A base condition is a cruitial part of a recursive funtion else the function will run infinitely
+A function which calls it self until a base condition is satiesfied is known as `Reccursion`. A base condition is a cruitial part of a recursive funtion else the function will run infinitely.
 
 Problems on Recurssion
 
