@@ -244,7 +244,7 @@ def sel(arr):
     
  * Sorting very small arrays
 
-#### Insertion Sort:
+#### Insertion Sort
 
 Insertion Sort is a simple comparison-based sorting algorithm.
 It builds the sorted list one item at a time, by repeatedly inserting the current element into its correct position in the already-sorted part of the array.
