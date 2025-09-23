@@ -7,7 +7,7 @@
 
 🚀 My journey through Striver’s A2Z DSA Sheet using Python | Personal solutions, logic-first approach !
 
-This repository contains my personal solutions to the [Striver’s A2Z DSA Sheet](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/) using Python 🐍.
+This repository contains my personal solutions to the [Striver’s A2Z DSA Sheet](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/) using Python 🐍
 
 <br>
 I'm solving the Striver’s A2Z DSA Sheet using Python  — one day at a time. All solutions are written with my own logic.
