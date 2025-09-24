@@ -44,7 +44,7 @@ def isPalindrome(self, x):
         return False
 ```
 
-2) GCD
+2) GCD:
 
 ```
 def gcd(n1, n2):
