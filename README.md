@@ -61,7 +61,7 @@ def gcd(n1, n2):
     return gcd
 ```
 
-3) Armstrong Numbers
+3) Armstrong Numbers:
 
 [LeetCode](https://leetcode.com/problems/armstrong-number/description/)
 
