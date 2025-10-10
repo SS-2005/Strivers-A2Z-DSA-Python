@@ -15,7 +15,7 @@ I'm solving the Striver’s A2Z DSA Sheet using Python  — one day at a time. A
 This repo is to track my consistency and help others looking for clean, beginner-friendly Python DSA implementations
 
 ---
-## 🔗 Credits
+## 🔗 Credits:
 
 - 🧑‍💻 **LinkedIn:** [Take U Forword](https://www.linkedin.com/company/takeuforward/)
 
