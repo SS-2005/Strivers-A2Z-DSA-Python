@@ -1,8 +1,8 @@
-# Strivers-A2Z-DSA-Python :-
+# Strivers-A2Z-DSA-Python :
 
 ---
 
-## Introduction :-
+## Introduction :
 
 
 🚀 My journey through Striver’s A2Z DSA Sheet using Python | Personal solutions, logic-first approach 
