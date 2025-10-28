@@ -1,5 +1,4 @@
-# Strivers-A2Z-DSA-Python :
-
+# Strivers-A2Z-DSA-Python :-
 ---
 
 ## Introduction :
